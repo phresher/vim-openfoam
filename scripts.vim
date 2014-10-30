@@ -1,9 +1,7 @@
 "----------------------------------------"
-" vim extension for OpenFOAM cases       "
-" Language:     OpenFOAM Case Files      "
-" Maintainer:   Tobias Holzmann          "
-" Last Change:  March, 2013	         "
-" Version:      2.2.x                    "
+" Contributor:  Tobias Holzmann          "
+" Last Change:  October, 2014	         "
+" Version:      2.0	                 "
 " File:         .scripts                 "
 "----------------------------------------"
 

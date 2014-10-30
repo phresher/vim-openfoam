@@ -1,10 +1,7 @@
 "----------------------------------------"
-" vim addon for highlight OpenFOAM cases "
-" Language:     OpenFOAM Case Files      "
-" Maintainer:   Tobias Holzmann          "
-" Last Change:  April 22, 2012           "
-" Version:      Beta 1.2                 "
-" File:         syntax                   "
+" Contributor:  Tobias Holzmann          "
+" Last Change:  October 2014	         "
+" Version:      2.0                 	 "
 "----------------------------------------"
 
 set background=dark
