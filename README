@@ -7,7 +7,7 @@ This README  includes the steps which are necessary to get this application up a
 
 ### What is this repository for? ###
 * This extension to the vim editor allows you to highlight a lot of OpenFOAM keywords
-* Version 1.0
+* Version 2.0
 * Developed by [Holzmann-cfd](https://holzmann-cfd.de)
 
 ### How do I get set up? ###
