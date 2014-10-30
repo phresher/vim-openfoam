@@ -1,0 +1,58 @@
+#!/bin/bash
+#"----------------------------------------"
+#" vim extension OpenFOAM cases           "
+#" Language:     OpenFOAM Case Files      "
+#" Maintainer:   Tobias Holzmann          "
+#" Last Change:  March, 2013	          "
+#" Version:      2.2.x	                  "
+#" File:         install                  "
+#"----------------------------------------"
+#
+# If the script is not working, put the files into the right folders
+# openfoamcolor*.vim ---> $HOME/.vim/colors/ 
+# openfoam.vim       ---> $HOME/.vim/syntax/
+# scripts.vim        ---> $HOME/.vim/
+#
+#
+
+cd ${0%/*} || exit 1  # run from this directory
+
+echo "
+\"----------------------------------------\"
+\" vim addon for highlight OpenFOAM cases \"
+\" Maintainer:   Tobias Holzmann          \"
+\" Last Change:  March, 2013              \"
+\" Version:      2.2.x	                  \"
+\"----------------------------------------\"
+"
+
+# Checking out the .vim directory and create if not exist
+
+if [ ! -d $HOME/.vim ]; then
+	mkdir $HOME/.vim
+fi
+
+if [ ! -d $HOME/.vim/syntax ]; then
+	mkdir $HOME/.vim/syntax
+fi
+
+if [ ! -d $HOME/.vim/colors ]; then
+	mkdir $HOME/.vim/colors
+fi
+
+# Checking out the files for update
+
+cp -u syntax/openfoam.vim $HOME/.vim/syntax/
+cp -u scripts.vim $HOME/.vim/
+cp -u colors/* $HOME/.vim/colors/
+
+
+echo "
+vimExtensionOpenFOAM is ready to use 
+cholorscheme is set for dark background
+you can use other colorschemes from .vim/colors/ or creating your own 
+
+For changing the colorschemes edit the scripts.vim file
+For more informations open the readme file
+"
+
