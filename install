@@ -10,6 +10,7 @@
 # openfoamcolor*.vim ---> $HOME/.vim/colors/ 
 # openfoam.vim       ---> $HOME/.vim/syntax/
 # scripts.vim        ---> $HOME/.vim/
+# insert ':set tabstop=4 shiftwidth=4 expandtab' to .vimrc » if the file does not exist create it
 
 cd ${0%/*} || exit 1  # run from this directory
 
@@ -18,12 +19,16 @@ echo "
 \" vim addon for highlight OpenFOAM cases \"
 \" Maintainer:   Tobias Holzmann          \"
 \" Last Change:  October 2014             \"
-\" Version:      2.0	                  \"
+\" Version:      2.0                      \"
 \"----------------------------------------\"
 "
 
-# Checking out the .vim directory and create if not exist
+# color definition
+red='\e[0;31m'
+green='\e[0;32m'
+nc='\e[0m'
 
+# Checking out the .vim directory and create if not exist
 if [ ! -d $HOME/.vim ]; then
 	mkdir $HOME/.vim
 fi
@@ -42,10 +47,18 @@ cp -u syntax/openfoam.vim $HOME/.vim/syntax/
 cp -u scripts.vim $HOME/.vim/
 cp -u colors/* $HOME/.vim/colors/
 
+if [ ! -f $HOME/.vimrc ]; then
+    echo -e "${green}No \$HOME/.vimrc found » created${nc}"
+    echo ":set tabstop=4 shiftwidth=4 expandtab" > $HOME/.vimrc
+else
+    echo -e "${red}There is an existing \$HOME/.vimrc file" 
+    echo -e "${green}The following lines are insert to the last line: ':set tabstop=4 shiftwidth=4 expandtab'${nc}"
+    echo ":set tabstop=4 shiftwidth=4 expandtab" >> $HOME/.vimrc
+fi
 
-echo "
+
+echo -e "
 vimExtensionOpenFOAM is ready to use...
 Have a nice day... 
-Tobi, alias Shorty 
-"
+Tobias Holzmann"
 
