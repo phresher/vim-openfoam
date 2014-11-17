@@ -1,10 +1,9 @@
-"----------------------------------------"
-" Contributor:  Tobias Holzmann          "
-" Last Change:  October, 2014	         "
-" Version:      2.0	                 "
-" File:         .scripts                 "
-"----------------------------------------"
-
+"----------------------------------------------"
+" Contributor: Tobias Holzmann                 "
+" Last Change: November 2014                   "
+" Version:     2.1                             "
+" Email:       Tobias.Holzmann@Holzmann-cfd.de "
+"----------------------------------------------"
 if did_filetype()       " filetype already set..
   finish                " ..don't do these checks
 endif

@@ -1,9 +1,9 @@
-"----------------------------------------"
-" Contributor:  Tobias Holzmann          "
-" Last Change:  October 2014             "
-" Version:      2.0                 	 "
-"----------------------------------------"
-
+"----------------------------------------------"
+" Contributor: Tobias Holzmann                 "
+" Last Change: November 2014                   "
+" Version:     2.1                             "
+" Email:       Tobias.Holzmann@Holzmann-cfd.de "
+"----------------------------------------------"
 set background=dark
 hi clear
 let colors_name = "openfoam"
