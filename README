@@ -7,7 +7,7 @@ This README  includes the steps which are necessary to get this application up a
 
 ### What is this repository for? ###
 * This extension to the vim editor allows you to highlight a lot of OpenFOAM keywords
-* Version 2.0
+* Version 2.1
 * Developed by [Holzmann-cfd](https://holzmann-cfd.de)
 
 ### How do I get set up? ###
@@ -24,7 +24,6 @@ This README  includes the steps which are necessary to get this application up a
 > ./install
 * Finished
 
-
 ### Change color and keywords ###
 * If you have questions, hints or any suggestions please email me
 * If you want to change the colors you can change the following file
@@ -32,6 +31,14 @@ This README  includes the steps which are necessary to get this application up a
 * Additionally you can copy paste one file and make your own colorscheme. To use it change it in
 > ./vim/scripts.vim
 * If you insert more keywords you can make a new branch or merge to the master
+
+### Version Changes ###
+#### Version 2.1 ####
+* Split the openfoam.vim file into foam tree in syntax/openfoam/*
+* Added check into install script to check if there is already the entrys available in $HOME/.vimrc
+
+#### Version 2.0 ####
+* Added new keywords
 
 ### Thanksgiving ###
 * Bernhard Gscheider
