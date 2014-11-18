@@ -4,18 +4,80 @@
 " Version:     2.1                             "
 " Email:       Tobias.Holzmann@Holzmann-cfd.de "
 "----------------------------------------------"
-if did_filetype()       " filetype already set..
-  finish                " ..don't do these checks
+
+
+"-------------------------------------------------------------------------------
+if did_filetype()       
+  finish               
 endif
 
+
+" Check the first 15 lines and check which highlight should be used
+"-------------------------------------------------------------------------------
+
 let cnum = 1
+let exit = 0
 while 1
-   if (getline(cnum) =~ 'FoamFile') 		" Check the first 20 lines for FoamFile
-      setfiletype openfoam
-      colorscheme openfoamcolorBlackWhite	" Set up your colorscheme
-      break
-   elseif (cnum == 20)
-      break
-   endif
-   let cnum += 1
+	"- Check the first 15 lines for keyword 'FoamFile'
+    if (getline(cnum) =~ 'FoamFile')	
+        let dnum = cnum
+			"- Additional checks to load different highlight files"
+			"- This is done to be more flexible to set up colors
+			"- for same keywords in different files
+"-------------------------------------------------------------------------------
+            while 1
+				"- If 'FoamFile' found check more accurate
+                let a = getline(dnum)
+				"- Load 0/* files
+                if (a =~ 'alpha.*;')
+               \|| (a =~ 'cell.*;')
+               \|| (a =~ 'epsilon;')
+               \|| (a =~ 'ft;')
+               \|| (a =~ 'fu;')
+               \|| (a =~ 'G;')
+               \|| (a =~ 'h;')
+               \|| (a =~ 'hTotal;')
+               \|| (a =~ 'IDefault;')
+               \|| (a =~ 'k;')
+               \|| (a =~ 'kl;')
+               \|| (a =~ 'kt;')
+               \|| (a =~ 'mut;')
+               \|| (a =~ 'nu.*;')
+               \|| (a =~ 'omega;')
+               \|| (a =~ 'p;')
+               \|| (a =~ 'phi;')
+               \|| (a =~ 'point.*;')
+               \|| (a =~ 'p_rgh;')
+               \|| (a =~ 'Qr;')
+               \|| (a =~ 'rho;')
+               \|| (a =~ 'T;')
+               \|| (a =~ 'Theta.*;')
+               \|| (a =~ 'Tu.*;')
+               \|| (a =~ 'U.*;')  
+               \|| (a =~ 'Xi.*;')
+					setfiletype foam256_bC
+					let exit = 1
+					break
+                elseif (dnum == 15)
+                   break
+                endif
+                let dnum += 1
+            endwhile
+"-------------------------------------------------------------------------------
+		"- Only set if you are not in 0/* files
+		if (exit == 0) 
+	        setfiletype foam256_general
+		endif
+		"- Set colorscheme
+        colorscheme foam256 
+		break
+	"- If keyword 'FoamFile' not found withing the first 15 lines exit    
+	elseif (cnum == 15)
+		break
+	endif
+	"- Increase line number
+	let cnum += 1
 endwhile
+
+
+"-------------------------------------------------------------------------------
