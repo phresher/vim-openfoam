@@ -53,6 +53,21 @@ hi def foam256_includeKey		ctermfg=089		ctermbg=232		cterm=none
 hi def foam256_includeFile		ctermfg=089		ctermbg=232		cterm=none
 
 " -----------------------------------------------------------------------------
-hi def foam256_variables  	    ctermfg=088     ctermbg=232     cterm=bold
+hi def foam256_variables  	    ctermfg=246     ctermbg=232     cterm=bold
+
+
+" -----------------------------------------------------------------------------
+hi def foam256_solvers  	    ctermfg=124     ctermbg=232     cterm=bold
+
+
+" -----------------------------------------------------------------------------
+hi def foam256_fvSolSolvers     ctermfg=221     ctermbg=232     cterm=bold
+hi def foam256_fvSolDict		ctermfg=005     ctermbg=232     cterm=none
+
+
+" -----------------------------------------------------------------------------
+hi def foam256_fvSchemesOpr		ctermfg=002     ctermbg=232     cterm=none
+hi def foam256_fvSchemesDict	ctermfg=005     ctermbg=232     cterm=none
+
 
 "------------------------------------------------------------------------------

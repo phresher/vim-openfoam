@@ -85,8 +85,9 @@
 
 
 	"- Get the file name and color it if its a right path
+	"- Also used for included functions 'lib.so'
 	syntax match includeFile 
-	\ "\"\{1}[A-Za-z]\+[A-Za-z0-9\_\-\/]*\"\{1}"
+	\ "\"\{1}[A-Za-z]\+[A-Za-z0-9\_\-\/\.]*\"\{1}"
 	highlight link includeFile foam256_includeFile
 
 

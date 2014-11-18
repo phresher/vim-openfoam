@@ -30,6 +30,7 @@ while 1
                 let a = getline(dnum)
 				"- Load 0/* files
                 if (a =~ 'alpha.*;')
+               \|| (a =~ 'b;')
                \|| (a =~ 'cell.*;')
                \|| (a =~ 'epsilon;')
                \|| (a =~ 'ft;')
@@ -50,6 +51,7 @@ while 1
                \|| (a =~ 'p_rgh;')
                \|| (a =~ 'Qr;')
                \|| (a =~ 'rho;')
+               \|| (a =~ 'Su;')
                \|| (a =~ 'T;')
                \|| (a =~ 'Theta.*;')
                \|| (a =~ 'Tu.*;')

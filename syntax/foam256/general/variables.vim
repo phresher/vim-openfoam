@@ -19,7 +19,7 @@
 	\ p_rgh 
 	\ k 
 	\ epsilon 
-	\ alpha.*
+	\ alpha
 	\ omega 
 	\ nut 
 	\ mut 
@@ -53,7 +53,30 @@
 	\ thermo 
 	\ meshPhi 
 	\ pcorr 
-	\ .*Final
-	\ .*Eff
-	highlight link variables foam256_variables                                                                                 
+	\ b
+	\ Su
+	\ Xi
+	\ ha
+	\ hau
+	\ Final
+	\ Eff
+	highlight link variables foam256_variables                                                                                
+
+	"- Highlight the fluid or solid FOAM variables 'Final'
+	syntax match varFinal 
+	\ "[a-zA-Z\.]\+Final\{1}"
+	highlight link varFinal foam256_variables                                                                                
+
+	"- Highlight the fluid or solid FOAM variables 'Eff'
+	syntax match varEff 
+	\ "[a-zA-Z\.]\+Eff\{1}"
+	highlight link varEff foam256_variables                                                                                
+
+	"- Highlight the alpha things
+	"- TODO highlight for different alpha regions
+	"	syntax match varAlpha 
+	"	\ "alpha[\.a-z]\+"
+	"	highlight link varAlpha foam256_variables
+
+
 "-------------------------------------------------------------------------------
