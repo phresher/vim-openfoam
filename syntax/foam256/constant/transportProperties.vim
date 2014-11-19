@@ -13,6 +13,7 @@
     "- Main keyword
     syn keyword transportKeyword 
     \ transportModel
+    \ phases
     hi link transportKeyword foam256_keyOnLeftSide
 
 
