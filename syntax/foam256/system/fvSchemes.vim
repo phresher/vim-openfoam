@@ -52,6 +52,7 @@
     \ QUICKV 
     \ SFCD 
     \ SFCDV 
+    \ limitedLimitedLinear
     \ SuperBee 
     \ SuperBeeV 
     \ UMIST 
@@ -105,7 +106,8 @@
     \ bounded 
     \ localEuler 
     \ steadyState 
-    \ Gauss 
+    \ Gauss
+    \ cellLimited 
     \ corrected 
     \ uncorrected 
     \ faceCorrected 
