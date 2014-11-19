@@ -5,13 +5,35 @@
 " Email:       Tobias.Holzmann@Holzmann-cfd.de "
 "----------------------------------------------"
 
+
 " transportProperties 
+"-------------------------------------------------------------------------------
 
-syn 	keyword	ofTransportPropertiesConst transportModel
-hi	link  	ofTransportPropertiesConst Constant
 
-syn	keyword ofTransportPropertiesModel Newtonian BirdCarreau CrossPowerLaw powerLaw HerschelBulkley
-hi	link	ofTransportPropertiesModel Boolean
+    "- Main keyword
+    syn keyword transportKeyword 
+    \ transportModel
+    hi link transportKeyword foam256_keyOnLeftSide
 
-syn	keyword	ofTransportPropertiesGroups twoPhase phase1 phase2 CrossPowerLawCoeffs BirdCarreauCoeffs 
-hi	link	ofTransportPropertiesGroups Statement
+
+    "- Models which can be used
+    syn keyword transportModels 
+    \ Newtonian 
+    \ BirdCarreau 
+    \ CrossPowerLaw 
+    \ powerLaw 
+    \ HerschelBulkley
+    hi link transportModels foam256_tranportModels 
+
+
+    "- Dictionary
+    syn keyword transportDict 
+    \ twoPhase 
+    \ phase1 
+    \ phase2 
+    \ CrossPowerLawCoeffs 
+    \ BirdCarreauCoeffs 
+    hi link transportDict foam256_dictionary
+
+
+"-------------------------------------------------------------------------------

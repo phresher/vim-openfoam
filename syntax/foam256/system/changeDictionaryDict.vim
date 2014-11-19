@@ -5,7 +5,14 @@
 " Email:       Tobias.Holzmann@Holzmann-cfd.de "
 "----------------------------------------------"
 
-" changeDictionaryDict
 
-syntax	keyword ofSetFieldsDictionaryDictGroup dictionaryReplacement
-highlight link	ofSetFieldsDictionaryDictGroup Statement                                
+" changeDictionaryDict
+"-------------------------------------------------------------------------------
+
+    "- Dictionarys in the file 
+    syntax keyword dictReplace 
+    \ dictionaryReplacement
+    highlight link dictReplace foam256_dictionary
+
+
+"-------------------------------------------------------------------------------

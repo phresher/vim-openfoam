@@ -5,10 +5,28 @@
 " Email:       Tobias.Holzmann@Holzmann-cfd.de "
 "----------------------------------------------"
 
+
 " PolyMesh - blockMeshDict
+"-------------------------------------------------------------------------------
 
-syn	keyword	ofConstantblockMeshDict	vertices blocks edges boundary mergePatchPairs
-highlight link	ofConstantblockMeshDict Statement
 
-syn	keyword	ofConstantblockMeshDictSpec convertToMeters hex simpleGrading faces
-highlight link	ofConstantblockMeshDictSpec Constant
+    "-
+    syn keyword blockMeshDictDict
+    \ vertices 
+    \ blocks 
+    \ edges 
+    \ boundary 
+    \ mergePatchPairs
+    highlight link blockMeshDictDict foam256_dictionary
+
+    
+    "-  
+    syn keyword	blockMeshDictKeywords 
+    \ convertToMeters 
+    \ hex 
+    \ simpleGrading 
+    \ faces
+    highlight link blockMeshDictKeywords foam256_keyOnLeftSide
+
+
+"-------------------------------------------------------------------------------

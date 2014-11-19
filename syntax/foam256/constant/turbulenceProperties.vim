@@ -5,10 +5,23 @@
 " Email:       Tobias.Holzmann@Holzmann-cfd.de "
 "----------------------------------------------"
 
+
 " turbulenceProperties
+"-------------------------------------------------------------------------------
 
-syn	keyword ofConstantturbProperties simulationType
-highlight link	ofConstantturbProperties constant
 
-syn	match	ofConstantturbPropertiesType " RASModel\| LESModel"
-highlight link  ofConstantturbPropertiesType Boolean
+    "-
+    syn keyword turbProperties 
+    \ simulationType
+    highlight link turbProperties foam256_turbPropKey
+
+
+    "-
+    syn match turbModel 
+    \ " RASModel
+    \\| LESModel
+    \\| laminar"
+    highlight link turbModel foam256_turbPropModel
+
+
+"-------------------------------------------------------------------------------

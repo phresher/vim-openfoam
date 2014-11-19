@@ -5,13 +5,50 @@
 " Email:       Tobias.Holzmann@Holzmann-cfd.de "
 "----------------------------------------------"
 
+
 " RASProperties 
+"-------------------------------------------------------------------------------
 
-syn	keyword	ofConstantRASProperties printCoeffs turbulence
-highlight link  ofConstantRASProperties Constant
 
-syn	match 	ofConstantRASPropertiesSpec "^RASModel"
-highlight link	ofConstantRASPropertiesSpec constant
+    "- Special keywords
+    syn keyword RASPropertiesSpecial
+    \ printCoeffs 
+    \ turbulence
+    highlight link RASPropertiesSpecial foam256_keyOnLeftSide
 
-syn 	keyword	ofConstantRASOptions kOmega kOmegaSST kEpsilon laminar qZeta realizeableKE SpalartAllmaras RNGkEpsilon NonelinearKEShih LRR LamBremhorsteKE LounderGibsonRSTM LounderSharmaKE LienCubicKE LienCubicKELowRe LienLeschzinerLowRe
-highlight link  ofConstantRASOptions Boolean
+
+    "- Modeltyp keyword
+    syn match RASPropertiesModelKey 
+    \ "^RASModel\{1}"
+    highlight link RASPropertiesModelKey foam256_RASPropKey
+
+
+    "- RASModels which are available 
+    syn keyword RASPropertiesModels 
+    \ v2f
+    \ realizableKE
+    \ kkLOmega
+    \ NonlinearKEShih    
+    \ LaunderSharmaKE
+    \ LaunderGibsonRSTM
+    \ LamBremhorstKE
+    \ kOmega 
+    \ kOmegaSST 
+    \ kEpsilon 
+    \ laminar 
+    \ qZeta 
+    \ realizeableKE 
+    \ SpalartAllmaras 
+    \ RNGkEpsilon 
+    \ NonelinearKEShih 
+    \ LRR 
+    \ LamBremhorsteKE 
+    \ LounderGibsonRSTM 
+    \ LounderSharmaKE 
+    \ LienCubicKE 
+    \ LienCubicKELowRe 
+    \ LienLeschzinerLowRe
+    highlight link RASPropertiesModels foam256_RASModels
+
+
+"-------------------------------------------------------------------------------

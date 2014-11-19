@@ -5,13 +5,62 @@
 " Email:       Tobias.Holzmann@Holzmann-cfd.de "
 "----------------------------------------------"
 
+
 " PolyMesh/boundary
+"-------------------------------------------------------------------------------
 
-syn	keyword ofBoundaryDictConst patch wall symmetryPlane empty slip cyclic inlet; outlet; mappedWall cyclicAMI cyclicACMI
-highlight link  ofBoundaryDictConst Boolean
 
-syn	keyword ofBoundaryDictConstant inGroups type nFaces startFace offsetMode sampleMode sampleRegion samplePatch offset matchTolerance transform neighbourPatch
-highlight link	ofBoundaryDictConstant Constant
+    "- Boundary types
+    syn keyword blockMeshDictTypes
+    \ patch 
+    \ wall 
+    \ symmetryPlane 
+    \ symmetry
+    \ empty 
+    \ slip 
+    \ cyclic 
+    \ mappedWall 
+    \ cyclicAMI 
+    \ cyclicACMI
+    \ noOrdering
+    \ coincidentFullMatch
+    \ rotational
+    \ translational
+    \ unknown
+    highlight link blockMeshDictTypes foam256_keyOnRightSide
 
-syn	keyword ofBoundaryDictType nearestPatchFace nearestCell nearestFace nearestPatchFaceAMI nearestPatchPoint noOrdering coincidentFullMatch rotational translational unknown
-highlight link	ofBoundaryDictType Type
+
+    "-
+    syn keyword blockMeshDictKeys 
+    \ inGroups 
+    \ type 
+    \ arc
+    \ nFaces 
+    \ startFace 
+    \ offsetMode 
+    \ sampleMode 
+    \ sampleRegion 
+    \ samplePatch 
+    \ offset 
+    \ matchTolerance 
+    \ transform 
+    \ neighbourPatch
+    highlight link blockMeshDictKeys foam256_keyOnLeftSide
+
+
+    "-
+    syn keyword blockMeshDictSpecialKeys 
+    \ nearestPatchFace 
+    \ nearestCell 
+    \ nearestFace 
+    \ nearestPatchFaceAMI 
+    \ nearestPatchPoint 
+    \ noOrdering 
+    \ coincidentFullMatch 
+    \ rotational 
+    \ translational 
+    \ unknown
+    highlight link blockMeshDictSpecialKeys foam256_specialEntry
+
+
+"-------------------------------------------------------------------------------
