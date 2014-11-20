@@ -28,7 +28,6 @@ while 1
             while 1
                 "- If 'FoamFile' found check more accurate
                 let a = getline(dnum)
-                let dnum += 1
                 if (a =~ 'alpha.*;')
                \|| (a =~ 'cell.*;')
                \|| (a =~ 'epsilon;')
