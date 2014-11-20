@@ -13,6 +13,11 @@ if exists("b:current_syntax")
 endif
 
 
+" Load  file to buffer for completition
+" -----------------------------------------------------------------------------
+:badd $HOME/.vim/syntax/foam256/const/thermodynamicProperties.vim
+
+
 " Source general stuff 
 " -----------------------------------------------------------------------------
 :source $HOME/.vim/syntax/foam256/general/general.vim
@@ -21,11 +26,6 @@ endif
 " Source foam variable highlight
 " -----------------------------------------------------------------------------
 :source $HOME/.vim/syntax/foam256/general/variables.vim
-
-
-" Source foam BC
-" -----------------------------------------------------------------------------
-:source $HOME/.vim/syntax/foam256/0/BC.vim
 
 
 " Source highlight for the changeDictionaryDict 

@@ -13,6 +13,11 @@ if exists("b:current_syntax")
 endif
 
 
+" Load BC file to buffer for completition
+" -----------------------------------------------------------------------------
+:badd $HOME/.vim/syntax/foam256/0/BC.vim
+
+
 " Source general stuff 
 " -----------------------------------------------------------------------------
 :source $HOME/.vim/syntax/foam256/general/general.vim

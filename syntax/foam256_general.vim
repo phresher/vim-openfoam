@@ -12,6 +12,13 @@ if exists("b:current_syntax")
 endif
 
 
+" Load  file to buffer for completition
+" -----------------------------------------------------------------------------
+:badd $HOME/.vim/syntax/foam256/constant/fvSolution.vim
+:badd $HOME/.vim/syntax/foam256/constant/fvSchemes.vim
+:badd $HOME/.vim/syntax/foam256/constant/RASProperties.vim
+
+
 " General stuff
 "-------------------------------------------------------------------------------
 :source $HOME/.vim/syntax/foam256/general/general.vim
