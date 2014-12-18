@@ -15,22 +15,22 @@ endif
 
 " Load BC file to buffer for completition
 " -----------------------------------------------------------------------------
-:badd $HOME/.vim/syntax/foam256/0/BC.vim
+:badd syntax/foam256/0/BC.vim
 
 
 " Source general stuff 
 " -----------------------------------------------------------------------------
-:source $HOME/.vim/syntax/foam256/general/general.vim
+:source syntax/foam256/general/general.vim
 
 
 " Source foam variable highlight
 " -----------------------------------------------------------------------------
-:source $HOME/.vim/syntax/foam256/general/variables.vim
+:source syntax/foam256/general/variables.vim
 
 
 " Source highlight for the files in 0/ 
 " -----------------------------------------------------------------------------
-:source $HOME/.vim/syntax/foam256/0/BC.vim
+:source syntax/foam256/0/BC.vim
 
 
 " -----------------------------------------------------------------------------
