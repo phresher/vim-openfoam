@@ -12,10 +12,10 @@
 
     "-
     syn keyword blockMeshDictDict
-    \ vertices 
-    \ blocks 
-    \ edges 
-    \ boundary 
+    \ vertices
+    \ blocks
+    \ edges
+    \ boundary
     \ mergePatchPairs
     highlight link blockMeshDictDict foam256_dictionary
 
