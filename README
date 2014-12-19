@@ -4,7 +4,7 @@
 This is a fork of https://bitbucket.org/shor-ty/vimextensionopenfoam/overview by Tobias Holzmann.
 I want to make it compatible to vundle for automatic deployment on new machines. 
 This is not yet the case. For the latest version, feedback etc. please contact Mr Holzmann on his aforementioned repo.
-
+Further I'm working on enhancements to get it compatible with solarized
 
 
 
