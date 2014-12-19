@@ -15,22 +15,22 @@ endif
 
 " Load  file to buffer for completition
 " -----------------------------------------------------------------------------
-:badd syntax/foam256/const/thermodynamicProperties.vim
+:badd $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/const/thermodynamicProperties.vim
 
 
 " Source general stuff 
 " -----------------------------------------------------------------------------
-:source syntax/foam256/general/general.vim
+:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/general/general.vim
 
 
 " Source foam variable highlight
 " -----------------------------------------------------------------------------
-:source syntax/foam256/general/variables.vim
+:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/general/variables.vim
 
 
 " Source highlight for the changeDictionaryDict 
 " -----------------------------------------------------------------------------
-:source syntax/foam256/constant/thermodynamicProperties.vim
+:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/constant/thermodynamicProperties.vim
 
 
 "-------------------------------------------------------------------------------

@@ -12,25 +12,26 @@ if exists("b:current_syntax")
  finish
 endif
 
+set runtimepath+=""
 
 " Load BC file to buffer for completition
 " -----------------------------------------------------------------------------
-:badd syntax/foam256/0/BC.vim
+:badd $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/0/BC.vim
 
 
 " Source general stuff 
 " -----------------------------------------------------------------------------
-:source syntax/foam256/general/general.vim
+:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/general/general.vim
 
 
 " Source foam variable highlight
 " -----------------------------------------------------------------------------
-:source syntax/foam256/general/variables.vim
+:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/general/variables.vim
 
 
 " Source highlight for the files in 0/ 
 " -----------------------------------------------------------------------------
-:source syntax/foam256/0/BC.vim
+:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/0/BC.vim
 
 
 " -----------------------------------------------------------------------------

@@ -14,40 +14,40 @@ endif
 
 " Load  file to buffer for completition
 " -----------------------------------------------------------------------------
-:badd syntax/foam256/constant/fvSolution.vim
-:badd syntax/foam256/constant/fvSchemes.vim
-:badd syntax/foam256/constant/RASProperties.vim
+:badd $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/constant/fvSolution.vim
+:badd $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/constant/fvSchemes.vim
+:badd $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/constant/RASProperties.vim
 
 
 " General stuff
 "-------------------------------------------------------------------------------
-:source syntax/foam256/general/general.vim
-:source syntax/foam256/general/variables.vim
+:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/general/general.vim
+:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/general/variables.vim
 
 
 " Folder system
 "-------------------------------------------------------------------------------
-:source syntax/foam256/system/controlDict.vim
-:source syntax/foam256/system/fvSolution.vim
-:source syntax/foam256/system/fvSchemes.vim
-:source syntax/foam256/system/decomposePar.vim
-:source syntax/foam256/system/setFieldsDict.vim
-:source syntax/foam256/system/snappyHexMeshDict.vim
+:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/system/controlDict.vim
+:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/system/fvSolution.vim
+:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/system/fvSchemes.vim
+:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/system/decomposePar.vim
+:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/system/setFieldsDict.vim
+:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/system/snappyHexMeshDict.vim
 
 
 " Folder constant
 "-------------------------------------------------------------------------------
-:source syntax/foam256/constant/RASProperties.vim
-:source syntax/foam256/constant/turbulenceProperties.vim
-:source syntax/foam256/constant/radiationProperties.vim
-:source syntax/foam256/constant/regionProperties.vim
-:source syntax/foam256/constant/transportProperties.vim
+:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/constant/RASProperties.vim
+:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/constant/turbulenceProperties.vim
+:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/constant/radiationProperties.vim
+:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/constant/regionProperties.vim
+:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/constant/transportProperties.vim
 
 
 " Folder constant/polyMesh
 "-------------------------------------------------------------------------------
-:source syntax/foam256/constant/polyMesh/boundary.vim
-:source syntax/foam256/constant/polyMesh/blockMeshDict.vim
+:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/constant/polyMesh/boundary.vim
+:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/constant/polyMesh/blockMeshDict.vim
 
 
 "-------------------------------------------------------------------------------
