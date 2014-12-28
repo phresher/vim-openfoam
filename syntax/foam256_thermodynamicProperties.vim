@@ -20,20 +20,24 @@ endif
 
 " Source general stuff 
 " -----------------------------------------------------------------------------
-:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/general/general.vim
+" :source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/general/general.vim
+runtime syntax/foam256/general/general.vim
 
 
 " Source foam variable highlight
 " -----------------------------------------------------------------------------
-:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/general/variables.vim
+" :source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/general/variables.vim
+runtime syntax/foam256/general/variables.vim
 
 
 " Source highlight for the changeDictionaryDict 
 " -----------------------------------------------------------------------------
-:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/constant/thermodynamicProperties.vim
+" :source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/constant/thermodynamicProperties.vim
+runtime syntax/foam256/constant/thermodynamicProperties.vim
 
 " Source mapping of highlightgroups to standard highlightgroups
-:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256_keywordmapping.vim
+" :source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256_keywordmapping.vim
+runtime syntax/foam256_keywordmapping.vim
 
 "-------------------------------------------------------------------------------
 let b:current_syntax = "foam256"
