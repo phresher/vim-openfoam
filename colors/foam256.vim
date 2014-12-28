@@ -9,24 +9,21 @@
 " Initialization 
 " -----------------------------------------------------------------------------
 
-if &t_Co != 256 
-    if has("gui_running")
-    else
-      echomsg ""
-      echomsg "err: please use a 256-color terminal"
-      echomsg ""
-    endif
+if &t_Co != 256
+    echomsg ""
+    echomsg "err: please use a 256-color terminal"
+    echomsg ""
 endif
 
-"set background=light
+set background=light
 
-" hi clear
+hi clear
 
 if exists("syntax_on")
-    " syntax reset
+    syntax reset
 endif
 
-let colors_name = "foam256_solarized"
+let colors_name = "foam256"
 
 
 " Set the colors for foam256
@@ -35,68 +32,67 @@ let colors_name = "foam256_solarized"
 " -----------------------------------------------------------------------------
 "   name                        font color      background        font
 " -----------------------------------------------------------------------------
-" hi Normal                       ctermfg=254     ctermbg=none         cterm=none
+hi Normal                       ctermfg=254     ctermbg=232         cterm=none
 
 
 " User defined macros
 " -----------------------------------------------------------------------------
-
-hi link foam256_bC                Statement
-hi link foam256_keyOnLeftSide     Statement
-hi link foam256_keyOnRightSide    Identifier
-hi link foam256_specialEntry      Identifier
-
-
-" -----------------------------------------------------------------------------
-hi link foam256_header            PreProc
-hi link foam256_numbers           Constant
-hi link foam256_comment           Comment
-hi link foam256_operators         Statement
-hi link foam256_bool              Type
-hi link foam256_userDefVar        Identifier
-hi link foam256_includeKey        PreProc 
-hi link foam256_includeFile       Identifier
-hi link foam256_dictionary        Type
+hi def foam256_bC               ctermfg=203     ctermbg=232         cterm=none 
+hi def foam256_keyOnLeftSide    ctermfg=002     ctermbg=232         cterm=none 
+hi def foam256_keyOnRightSide   ctermfg=221     ctermbg=232         cterm=none 
+hi def foam256_specialEntry     ctermfg=153     ctermbg=232         cterm=none 
 
 
 " -----------------------------------------------------------------------------
-hi link foam256_variables         Identifier
+hi def foam256_header           ctermfg=249     ctermbg=232         cterm=none
+hi def foam256_numbers          ctermfg=006     ctermbg=232         cterm=none
+hi def foam256_comment          ctermfg=242     ctermbg=232         cterm=none
+hi def foam256_operators        ctermfg=242     ctermbg=232         cterm=none
+hi def foam256_bool             ctermfg=052     ctermbg=232         cterm=bold
+hi def foam256_userDefVar       ctermfg=005     ctermbg=232         cterm=none
+hi def foam256_includeKey       ctermfg=089     ctermbg=232         cterm=none
+hi def foam256_includeFile      ctermfg=089     ctermbg=232         cterm=none
+hi def foam256_dictionary       ctermfg=005     ctermbg=232         cterm=none
 
 
 " -----------------------------------------------------------------------------
-hi link foam256_solvers           Type
+hi def foam256_variables        ctermfg=246     ctermbg=232         cterm=bold
 
 
 " -----------------------------------------------------------------------------
-hi link foam256_fvSolSolvers      Type
+hi def foam256_solvers          ctermfg=124     ctermbg=232         cterm=bold
 
 
 " -----------------------------------------------------------------------------
-hi link foam256_fvSchemesOpr      Type
+hi def foam256_fvSolSolvers     ctermfg=221     ctermbg=232         cterm=bold
 
 
 " -----------------------------------------------------------------------------
-hi link foam256_setFieldSpecial   Normal
+hi def foam256_fvSchemesOpr     ctermfg=002     ctermbg=232         cterm=none
 
 
 " -----------------------------------------------------------------------------
-hi link foam256_snappySTL         Normal
-hi link foam256_sHMKeyOnLS        Type
-hi link foam256_sHMKeyOnRS        Identifier
+hi def foam256_setFieldSpecial  ctermfg=221     ctermbg=232         cterm=none
 
 
 " -----------------------------------------------------------------------------
-hi link foam256_RASPropKey        Variable
-hi link foam256_RASModels         Type
+hi def foam256_snappySTL        ctermfg=088     ctermbg=232         cterm=none
+hi def foam256_sHMKeyOnLS       ctermfg=002     ctermbg=232         cterm=none
+hi def foam256_sHMKeyOnRS       ctermfg=221     ctermbg=232         cterm=none    
+
+
+" -----------------------------------------------------------------------------
+hi def foam256_RASPropKey       ctermfg=002     ctermbg=232         cterm=bold
+hi def foam256_RASModels        ctermfg=001     ctermbg=232         cterm=none
 
 
 "------------------------------------------------------------------------------
-hi link foam256_turbPropKey       Type
-hi link foam256_turbPropModel     Identifier
+hi def foam256_turbPropKey      ctermfg=002     ctermbg=232         cterm=bold
+hi def foam256_turbPropModel    ctermfg=001     ctermbg=232         cterm=none
 
 
 "------------------------------------------------------------------------------
-hi link foam256_tranportModels    Type
+hi def foam256_tranportModels   ctermfg=001     ctermbg=232         cterm=none
 
 
 " -----------------------------------------------------------------------------
