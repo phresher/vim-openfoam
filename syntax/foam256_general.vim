@@ -49,6 +49,8 @@ endif
 :source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/constant/polyMesh/boundary.vim
 :source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/constant/polyMesh/blockMeshDict.vim
 
+" Source mapping of highlightgroups to standard highlightgroups
+:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256_keywordmapping.vim
 
 "-------------------------------------------------------------------------------
 let b:current_syntax = "foam256"

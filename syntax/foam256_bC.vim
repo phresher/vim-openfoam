@@ -33,6 +33,12 @@ set runtimepath+=""
 " -----------------------------------------------------------------------------
 :source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/0/BC.vim
 
+"------------------------------------------
+
+
+" Source mapping of highlightgroups to standard highlightgroups
+:source $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256_keywordmapping.vim
+
 
 " -----------------------------------------------------------------------------
 let b:current_syntax = "foam256"

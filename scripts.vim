@@ -28,33 +28,33 @@ while 1
             while 1
                 "- If 'FoamFile' found check more accurate
                 let a = getline(dnum)
-                if (a =~ 'alpha.*;')
-               \|| (a =~ 'cell.*;')
-               \|| (a =~ 'epsilon;')
-               \|| (a =~ 'ft;')
-               \|| (a =~ 'fu;')
-               \|| (a =~ 'G;')
-               \|| (a =~ ' h;')
-               \|| (a =~ 'hTotal;')
-               \|| (a =~ 'IDefault;')
-               \|| (a =~ 'k;')
-               \|| (a =~ 'kl;')
-               \|| (a =~ 'kt;')
-               \|| (a =~ 'mut;')
-               \|| (a =~ 'nu.*;')
-               \|| (a =~ 'omega;')
-               \|| (a =~ 'p;')
-               \|| (a =~ 'phi;')
-               \|| (a =~ 'point.*;')
-               \|| (a =~ 'p_rgh;')
-               \|| (a =~ 'Qr;')
-               \|| (a =~ 'rho;')
-               \|| (a =~ 'Su;')
-               \|| (a =~ 'T;')
-               \|| (a =~ 'Theta.*;')
-               \|| (a =~ 'Tu.*;')
-               \|| (a =~ 'U.*;')  
-               \|| (a =~ 'Xi.*;')
+                if ((a =~ 'alpha.*;')
+                 \|| (a =~ 'cell.*;')
+                 \|| (a =~ 'epsilon;')
+                 \|| (a =~ 'ft;')
+                 \|| (a =~ 'fu;')
+                 \|| (a =~ 'G;')
+                 \|| (a =~ ' h;')
+                 \|| (a =~ 'hTotal;')
+                 \|| (a =~ 'IDefault;')
+                 \|| (a =~ 'k;')
+                 \|| (a =~ 'kl;')
+                 \|| (a =~ 'kt;')
+                 \|| (a =~ 'mut;')
+                 \|| (a =~ 'nu.*;')
+                 \|| (a =~ 'omega;')
+                 \|| (a =~ 'p;')
+                 \|| (a =~ 'phi;')
+                 \|| (a =~ 'point.*;')
+                 \|| (a =~ 'p_rgh;')
+                 \|| (a =~ 'Qr;')
+                 \|| (a =~ 'rho;')
+                 \|| (a =~ 'Su;')
+                 \|| (a =~ ' T;')
+                 \|| (a =~ 'Theta.*;')
+                 \|| (a =~ 'Tu.*;')
+                 \|| (a =~ ' U.*;')
+                 \|| (a =~ 'Xi.*;'))
                 "- Load 0/* files
                     setfiletype foam256_bC
                     let exit = 1
@@ -68,6 +68,10 @@ while 1
                     setfiletype foam256_thermodynamicProperties
                     let exit = 1
                     break
+                elseif (a =~ 'controlDict')
+                    setfiletype foam256_general
+                    let exit =1
+                    break
                 elseif (dnum == 15)
                    break
                 endif
@@ -79,9 +83,9 @@ while 1
             setfiletype foam256_general
         endif
         "- Set colorscheme
-        colorscheme foam256 
+        " clorscheme foam256 
         break
-    "- If keyword 'FoamFile' not found withing the first 15 lines exit    
+    "- If keyword 'FoamFile' not found within the first 15 lines exit    
     elseif (cnum == 15)
         break
     endif

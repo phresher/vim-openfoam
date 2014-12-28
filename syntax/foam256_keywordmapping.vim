@@ -9,24 +9,11 @@
 " Initialization 
 " -----------------------------------------------------------------------------
 
-if &t_Co != 256 
-    if has("gui_running")
-    else
-      echomsg ""
-      echomsg "err: please use a 256-color terminal"
-      echomsg ""
-    endif
-endif
-
-"set background=light
 
 " hi clear
 
-if exists("syntax_on")
-    " syntax reset
-endif
 
-let colors_name = "foam256_solarized"
+" let colors_name = ""
 
 
 " Set the colors for foam256
@@ -40,16 +27,19 @@ let colors_name = "foam256_solarized"
 
 " User defined macros
 " -----------------------------------------------------------------------------
+" possible groups: 
+" Special Label Conditional Repeat Number Errror Statement
+" Type String Comment Todo Structure WarningMsg ErrorMsg Identifier
 
-hi link foam256_bC                Statement
+hi link foam256_bC                Special
 hi link foam256_keyOnLeftSide     Statement
-hi link foam256_keyOnRightSide    Identifier
+hi link foam256_keyOnRightSide    Special
 hi link foam256_specialEntry      Identifier
 
 
 " -----------------------------------------------------------------------------
 hi link foam256_header            PreProc
-hi link foam256_numbers           Constant
+hi link foam256_numbers           Number
 hi link foam256_comment           Comment
 hi link foam256_operators         Statement
 hi link foam256_bool              Type
