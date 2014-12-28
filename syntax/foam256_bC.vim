@@ -16,7 +16,7 @@ set runtimepath+=""
 
 " Load BC file to buffer for completition
 " -----------------------------------------------------------------------------
-:badd $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/0/BC.vim
+badd $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/0/BC.vim
 
 
 " Source general stuff 

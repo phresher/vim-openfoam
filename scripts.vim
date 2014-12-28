@@ -84,6 +84,7 @@ while 1
         endif
         "- Set colorscheme
         " clorscheme foam256 
+        set tabstop=4 shiftwidth=4 expandtab
         break
     "- If keyword 'FoamFile' not found within the first 15 lines exit    
     elseif (cnum == 15)
