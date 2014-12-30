@@ -9,7 +9,7 @@ augroup check_foam_colors
   au!
   " au BufRead,BufCreate,FileReadPost * :call CheckFoam256() 
   " au BufRead,BufCreate,FileReadPost * :echom "a" 
-  au BufEnter,FileType foam* :call CheckFoamScheme()
+  au BufEnter,FileType * :call CheckFoamScheme()
 augroup End
 
 function! CheckFoamScheme()
@@ -18,6 +18,9 @@ function! CheckFoamScheme()
   endif
   if (g:foam256_use_custom_colors==1)
     "- Set colorscheme
-    colorscheme foam256 
+    let my_filetype = &filetype
+    if (my_filetype =~ 'foam256*') 
+      colorscheme foam256 
+    endif
   endif
 endfunction
