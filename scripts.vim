@@ -4,16 +4,19 @@
 " Version:     3.0                             "
 " Email:       Tobias.Holzmann@Holzmann-cfd.de "
 "----------------------------------------------"
-augroup check_foam
+augroup check_foam_colors
   au!
   " au BufRead,BufCreate,FileReadPost * :call CheckFoam256() 
   " au BufRead,BufCreate,FileReadPost * :echom "a" 
-  au FileType foam* :call CheckFoamScheme()
+  au BufEnter,FileType foam* :call CheckFoamScheme()
 augroup End
 
-" call CheckFoam256()
+augroup foam256
+  au!
+  au BufEnter * :call CheckFoam256()
+  augroup end
 
-function CheckFoamScheme()
+function! CheckFoamScheme()
   if !exists("g:foam256_use_custom_colors")
     let g:foam256_use_custom_colors=0
   endif
@@ -23,7 +26,7 @@ function CheckFoamScheme()
   endif
 endfunction
 
-" function CheckFoam256()
+function! CheckFoam256()
   "-------------------------------------------------------------------------------
   if did_filetype()       
     finish               
@@ -113,6 +116,6 @@ endfunction
       "- Increase line number
       let cnum += 1
   endwhile
-" endfunction
+endfunction
 
 "-------------------------------------------------------------------------------
