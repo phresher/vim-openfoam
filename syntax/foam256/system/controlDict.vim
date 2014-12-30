@@ -11,12 +11,12 @@
 
 
     "- Keys in controlDict on the left side (LS)
-    syn keyword ctrDictKeysRS 
-    \ startFrom 
-    \ stopAt 
-    \ deltaT 
-    \ writeControl 
-    \ writeInterval 
+    syn keyword ctrDictKeysLS 
+    \ startFrom
+    \ stopAt
+    \ deltaT
+    \ writeControl
+    \ writeInterval
     \ purgeWrite 
     \ writeFormat 
     \ writePrecision 
@@ -37,11 +37,11 @@
     \ secondaryWriteControl
     \ secondaryWriteInterval
     \ secondaryPurgeWrite
-    highlight link ctrDictKeysRS foam256_keyOnLeftSide 
+    highlight link ctrDictKeysLS foam256_keyOnLeftSide
 
 
     "- Keys in controlDict on the right side (RS)
-    syn keyword ctrDictKeysLS 
+    syn keyword ctrDictKeysRS 
     \ firstTime 
     \ latestTime 
     \ writeNow
@@ -70,7 +70,7 @@
     \ start 
     \ end 
     \ nPoints
-    highlight link ctrDictKeysLS foam256_keyOnRightSide
+    highlight link ctrDictKeysRS foam256_keyOnRightSide
 
     
     "- Special keys which match left and right but are on right side 
