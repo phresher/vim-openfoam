@@ -4,27 +4,11 @@
 " Version:     3.0                             "
 " Email:       Tobias.Holzmann@Holzmann-cfd.de "
 "----------------------------------------------"
-augroup check_foam_colors
-  au!
-  " au BufRead,BufCreate,FileReadPost * :call CheckFoam256() 
-  " au BufRead,BufCreate,FileReadPost * :echom "a" 
-  au BufEnter,FileType foam* :call CheckFoamScheme()
-augroup End
-
 augroup foam256
   au!
   au BufEnter * :call CheckFoam256()
-  augroup end
+augroup end
 
-function! CheckFoamScheme()
-  if !exists("g:foam256_use_custom_colors")
-    let g:foam256_use_custom_colors=0
-  endif
-  if (g:foam256_use_custom_colors==1)
-    "- Set colorscheme
-    colorscheme foam256 
-  endif
-endfunction
 
 function! CheckFoam256()
   "-------------------------------------------------------------------------------
@@ -107,7 +91,6 @@ function! CheckFoam256()
           "   "- Set colorscheme
           "   clorscheme foam256 
           " endif
-          set tabstop=4 shiftwidth=4 expandtab
           break
       "- If keyword 'FoamFile' not found within the first 15 lines exit    
       elseif (cnum == 15)
@@ -117,5 +100,6 @@ function! CheckFoam256()
       let cnum += 1
   endwhile
 endfunction
+
 
 "-------------------------------------------------------------------------------
