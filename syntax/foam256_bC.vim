@@ -12,12 +12,12 @@ if exists("b:current_syntax")
  finish
 endif
 
-set runtimepath+=""
 
+let s:plugindir = expand('<sfile>:p:h:h')
 " Load BC file to buffer for completition
 " -----------------------------------------------------------------------------
-badd $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/0/BC.vim
-
+let s:filepath= join([ s:plugindir ,"syntax/foam256/0/BC.vim"],"/")
+exec "badd ".s:filepath
 
 " Source general stuff 
 " -----------------------------------------------------------------------------

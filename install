@@ -30,6 +30,7 @@ nc='\e[0m'
 
 # Checking if .vim directories are available and create if bool = false
 #-------------------------------------------------------------------------------
+
 if [ ! -d $HOME/.vim ]; then
     mkdir $HOME/.vim
 fi
@@ -59,7 +60,8 @@ cp -u colors/* $HOME/.vim/colors/
 #-------------------------------------------------------------------------------
 if [ ! -f $HOME/.vimrc ]; then
     echo -e "${green}No \$HOME/.vimrc found » created${nc}"
-    echo $'"- vim Extension OpenFOAM\n:set tabstop=4 shiftwidth=4 expandtab'
+    # echo $'"- vim Extension OpenFOAM\n:set tabstop=4 shiftwidth=4 expandtab'
+    echo $'"- vim Extension OpenFOAM, if you have no colorscheme set to 1\n:let g:foam_use_custom_colors=0'
          \ >> $HOME/.vimrc
 
 else
@@ -72,7 +74,8 @@ else
     else 
         echo -e "${green}The following lines are insert to the last line:
                  ':set tabstop=4 shiftwidth=4 expandtab'${nc}"
-        echo $'"- vim Extension OpenFOAM\n:set tabstop=4 shiftwidth=4 expandtab'
+        # echo $'"- vim Extension OpenFOAM\n:set tabstop=4 shiftwidth=4 expandtab'
+        echo $'"- vim Extension OpenFOAM, if you have no colorscheme set to 1\n:let g:foam_use_custom_colors=0'
              \ >> $HOME/.vimrc
     fi
 fi

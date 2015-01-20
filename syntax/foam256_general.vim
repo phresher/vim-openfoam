@@ -14,10 +14,17 @@ endif
 
 " Load  file to buffer for completition
 " -----------------------------------------------------------------------------
-:badd $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/constant/fvSolution.vim
-:badd $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/constant/fvSchemes.vim
-:badd $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/constant/RASProperties.vim
+" :badd $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/constant/fvSolution.vim
+" :badd $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/constant/fvSchemes.vim
+" :badd $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/constant/RASProperties.vim
+let s:plugindir = expand('<sfile>:p:h:h')
 
+let s:filepath1= join([ s:plugindir ,"syntax/foam256/system/fvSolution.vim"],"/")
+exec "badd ".s:filepath1
+let s:filepath2= join([ s:plugindir ,"syntax/foam256/constant/RASProperties.vim"],"/")
+exec "badd ".s:filepath2
+let s:filepath3= join([ s:plugindir ,"syntax/foam256/system/fvSchemes.vim"],"/")
+exec "badd ".s:filepath3
 
 " General stuff
 "-------------------------------------------------------------------------------

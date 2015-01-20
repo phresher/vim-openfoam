@@ -15,8 +15,14 @@ endif
 
 " Load file to buffer for completition
 " -----------------------------------------------------------------------------
-:badd $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/system/changeDictionaryDict.vim
-:badd $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/0/BC.vim
+" :badd $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/system/changeDictionaryDict.vim
+" :badd $HOME/.vim/bundle/vim-openfoam-syntax/syntax/foam256/0/BC.vim
+let s:plugindir = expand('<sfile>:p:h:h')
+let s:filepath1= join([ s:plugindir ,"syntax/foam256/0/BC.vim"],"/")
+exec "badd ".s:filepath1
+let s:filepath2= join([ s:plugindir ,"syntax/foam256/system/changeDictionaryDict.vim"],"/")
+exec "badd ".s:filepath2
+
 
 
 " Source general stuff 
