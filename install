@@ -1,7 +1,7 @@
 #!/bin/bash
 #----------------------------------------"
 # Contributor:  Tobias Holzmann          "
-# Last Change:  November 2014            "
+# Last Change:  May 2015                 "
 # Version:      3.0                      "
 # Email: Tobias.Holzmann@Holzmann-cfd.de "
 #----------------------------------------"
@@ -16,7 +16,7 @@ echo "
 \"-----------------------------------------\"
 \" vim addon for highlight OpenFOAM files  \"
 \" Contributor:  Tobias Holzmann           \"
-\" Last Change:  November 2014             \"
+\" Last Change:  May 2015                  \"
 \" Version:      3.0                       \"
 \"-----------------------------------------\"
 "
@@ -50,7 +50,7 @@ fi
 # Copy files only if the copied files are newer [-u] 
 #-------------------------------------------------------------------------------
 cp -ur syntax/* $HOME/.vim/syntax/
-cp -u scripts.vim $HOME/.vim/
+cp -u ftdetect/scripts.vim $HOME/.vim/
 cp -u colors/* $HOME/.vim/colors/
 
 
@@ -58,9 +58,10 @@ cp -u colors/* $HOME/.vim/colors/
 # insert stuff, otherwise just add the stuff to the end of the file
 # TODO - check if the input lines still available!
 #-------------------------------------------------------------------------------
+echo 'Checking if $HOME/.vimrc is available'
 if [ ! -f $HOME/.vimrc ]; then
-    echo -e "${green}No \$HOME/.vimrc found » created${nc}"
-    # echo $'"- vim Extension OpenFOAM\n:set tabstop=4 shiftwidth=4 expandtab'
+    echo -e "${green}Not available \$HOME/.vimrc » created${nc}"
+    echo $'"- vim Extension OpenFOAM\n:set tabstop=4 shiftwidth=4 expandtab' > $HOME/.vimrc
     echo $'"- vim Extension OpenFOAM, if you have no colorscheme set to 1\n:let g:foam_use_custom_colors=0'
          \ >> $HOME/.vimrc
 
@@ -72,9 +73,9 @@ else
               found » nothing to do"
 
     else 
-        echo -e "${green}The following lines are insert to the last line:
+        echo -e "${green}The following lines are inserted at the end of the file:
                  ':set tabstop=4 shiftwidth=4 expandtab'${nc}"
-        # echo $'"- vim Extension OpenFOAM\n:set tabstop=4 shiftwidth=4 expandtab'
+        echo $'"- vim Extension OpenFOAM\n:set tabstop=4 shiftwidth=4 expandtab'
         echo $'"- vim Extension OpenFOAM, if you have no colorscheme set to 1\n:let g:foam_use_custom_colors=0'
              \ >> $HOME/.vimrc
     fi
