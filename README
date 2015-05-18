@@ -11,13 +11,13 @@ This short intruduction includes the steps which are necessary to get this appli
 * Developed by [Holzmann-cfd](https://holzmann-cfd.de)
 
 ### How do I get set up? ###
-* Feel free to compile it where ever you want, but normally its nice to have a fixed folder for _user compiled stuff_
-* Make a new folder
+* Feel free to clone it where ever you want, but normally you should have a fixed folder for _user stuff_
+* Make a new fold
 > mkdir -p $FOAM_RUN/../OpenFOAM_extensions
 * Switch to the new folder
 > cd $FOAM_RUN/../OpenFOAM_extensions
 * Clone the repository to the new folder
-> git clone https://shor-ty@bitbucket.org/shor-ty/vimExtensionOpenFOAM.git
+> git clone git://bitbucket.org:shor-ty/vimExtensionOpenFOAM
 * Switch to the repository directory
 > cd vimExtensionOpenFOAM
 * Install the extension by using the _install_ script
@@ -28,11 +28,17 @@ This short intruduction includes the steps which are necessary to get this appli
 * If you have questions, hints or any suggestions please email me
 * If you want to change the colors you can change the following file
 > ./vim/color/*.vim
-* Additionally you can copy paste one file and make your own colorscheme. To use it change it in
+> Extra color schemes can be found in the directory 'indent'
+* Additionally you can copy paste scheme and make your own out of it. To use it, change it in
 > ./vim/scripts.vim
-* If you insert more keywords you can make a new branch or merge to the master
+* If you insert more keywords or modify the files please make a pull request
 
 ### Version Changes ###
+#### Version 3.0 ####
+* Rearanged the files
+* Insert new keywords
+* Autocomplete BC
+
 #### Version 2.1 ####
 * Split the openfoam.vim file into foam tree in syntax/openfoam/*
 * Added check into install script to check if there is already the entrys available in $HOME/.vimrc
