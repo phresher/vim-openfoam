@@ -11,9 +11,10 @@
 
 
 cd ${0%/*} || exit 1
+clear
 
-echo "
-\"-----------------------------------------\"
+echo \
+"\"-----------------------------------------\"
 \" vim addon for highlight OpenFOAM files  \"
 \" Contributor:  Tobias Holzmann           \"
 \" Last Change:  May 2015                  \"
@@ -22,14 +23,14 @@ echo "
 "
 
 # Color definition for nice output and playing with bash
-#-------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 red='\e[0;31m'
 green='\e[0;32m'
 nc='\e[0m'
 
 
 # Checking if .vim directories are available and create if bool = false
-#-------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 if [ ! -d $HOME/.vim ]; then
     mkdir $HOME/.vim
 fi
@@ -60,8 +61,8 @@ fi
 
 
 # Copy files only if the copied files are newer [-u] 
-#-------------------------------------------------------------------------------
-echo -n 'All necessary files are copied now...'
+#------------------------------------------------------------------------------
+echo -n '    + All necessary files are copied/updated now...'
 cp -ur syntax/* $HOME/.vim/syntax/
 cp -u ftdetect/* $HOME/.vim/ftdetect/
 cp -u colors/* $HOME/.vim/colors/
@@ -70,45 +71,62 @@ cp -u indent/* $HOME/.vim/indent/
 echo 'done'
 
 
+# COLORS
+#------------------------------------------------------------------------------
+ORANGE='\033[0;33m'
+FL='\033[0;36m'
+
+
 # Check if .vimrc exist, if not create one and 
 # insert stuff, otherwise just add the stuff to the end of the file
-# TODO - check if the input lines still available!
-#-------------------------------------------------------------------------------
-echo 'Checking if $HOME/.vimrc is available'
+#------------------------------------------------------------------------------
+echo '    + Checking if $HOME/.vimrc is available'
 if [ ! -f $HOME/.vimrc ]; then
-    echo -e "   + ${green}Not available \$HOME/.vimrc » its gonna be created${nc}"
-    echo -e '   + The following lines will be inserted:'
-    echo    '       filetype plugin indent on'
-    echo    '       :let g:foam256_use_custom_colors=1'
-    echo    '   + If you want to use your own colorscheme set the value to 0 (foam256_use_custom_colors=0)'
+    echo -e "${green}    + Not available \$HOME/.vimrc » its gonna be created"
+    echo -e '    + The following lines will be inserted:'
+    echo    '        filetype plugin indent on'
+    echo    '        :let g:foam256_use_custom_colors=1${nc}'
+    echo -en "${ORANGE}    + If you want to use your own colorscheme set "
+    echo -e "the value to 0 (foam256_use_custom_colors=0)${nc}"
 
     #- Insert the lines
-    echo '"- vim Extension OpenFOAM (if you have your own colorscheme set to 0)\nfiletype plugin indent on\n:let g:foam_use_custom_colors=1' > $HOME/.vimrc
+    echo '"- vim Extension OpenFOAM' > $HOME/.vimrc
+    echo 'filetype plugin indent on' >> $HOME/.vimrc
+    echo ':let g:foam265_use_custom_colors=1' >> $HOME/.vimrc
 
 else
-    echo -e "${red}There is an existing \$HOME/.vimrc file"
+    echo -e "${ORANGE}        ++ There is an existing \$HOME/.vimrc file${nc}"
 
     #- TODO more accurate for plugin and indent
     if grep -Fq "vim Extension OpenFOAM" $HOME/.vimrc; then
-        echo "Entry of vim Extenion OpenFOAM in $HOME/.vimrc found » nothing to do"
+        echo -en "${ORANGE}        ++ Entry of vim Extenion OpenFOAM found"
+        echo -e "» nothing to do${nc}"
 
     else 
-        echo -e "    ${green}+ The following lines are inserted at the end of the file:"
-    	echo    '        filetype plugin indent on'
-    	echo -e "        :let g:foam256_use_custom_colors=1 ${nc}"
+        echo -en "        ${ORANGE}++ The following lines are inserted at"
+	echo -e " the end of the file:"
+    	echo    '            filetype plugin indent on'
+    	echo -e "            :let g:foam256_use_custom_colors=1 ${nc}"
+        echo -en "${ORANGE}    + If you want to use your own colorscheme set "
+        echo -e "the value to 0 (foam256_use_custom_colors=0)${nc}"
 
 	#- Insert the lines
-	echo '"- vim Extension OpenFOAM (if you have your own colorscheme set to 0)\nfiletype plugin indent on\n:let g:foam_use_custom_colors=1' >> $HOME/.vimrc
+	echo -e "\n\"- vim Extension OpenFOAM" >> $HOME/.vimrc
+        echo    'filetype plugin indent on' >> $HOME/.vimrc 
+	echo    ':let g:foam_use_custom_colors=1' >> $HOME/.vimrc
     fi
 fi
 
 
 # All done, say goodbye and be polite
-#-------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 echo -e "${nc}
-vimExtensionOpenFOAM is ready to use...
-Have a nice day... 
-Tobias Holzmann"
+    + vimExtensionOpenFOAM is ready to use
+    + thanks to ${FL}Ferdinand Leinbach${nc} for the extension
+
+Kind regards
+Tobias Holzmann
+"
 
 
-#-------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
