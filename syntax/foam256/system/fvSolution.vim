@@ -1,7 +1,7 @@
 "----------------------------------------------"
 " Contributor: Tobias Holzmann                 "
-" Last Change: November 2014                   "
-" Version:     3.0                             "
+" Last Change: May 2015                        "
+" Version:     4.0                             "
 " Email:       Tobias.Holzmann@Holzmann-cfd.de "
 "----------------------------------------------"
 

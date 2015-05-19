@@ -1,10 +1,10 @@
 #!/bin/bash
-#----------------------------------------"
-# Contributor:  Tobias Holzmann          "
-# Last Change:  May 2015                 "
-# Version:      3.0                      "
-# Email: Tobias.Holzmann@Holzmann-cfd.de "
-#----------------------------------------"
+#-----------------------------------------------"
+# Contributor:  Tobias Holzmann                 "
+# Last Change:  May 2015                        "
+# Version:     	4.0                             "
+# Email: 	Tobias.Holzmann@Holzmann-cfd.de "
+#-----------------------------------------------"
 
 
 #-------------------------------------------------------------------------------
@@ -14,13 +14,13 @@ cd ${0%/*} || exit 1
 clear
 
 echo \
-"\"-----------------------------------------\"
-\" vim addon for highlight OpenFOAM files  \"
-\" Contributor:  Tobias Holzmann           \"
-\" Last Change:  May 2015                  \"
-\" Version:      3.0                       \"
-\"-----------------------------------------\"
-"
+'"----------------------------------------------"
+" Contributor: 	Tobias Holzmann                 "
+" Last Change:  May 2015                        "
+" Version:     	4.0                             "
+" Email:       	Tobias.Holzmann@Holzmann-cfd.de "
+"-----------------------------------------------"
+'
 
 # Color definition for nice output and playing with bash
 #------------------------------------------------------------------------------
@@ -86,34 +86,48 @@ if [ ! -f $HOME/.vimrc ]; then
     echo -e '    + The following lines will be inserted:'
     echo    '        filetype plugin indent on'
     echo    '        :let g:foam256_use_custom_colors=1${nc}'
+    echo    '        :set t_Co=256{nc}'
     echo -en "${ORANGE}    + If you want to use your own colorscheme set "
     echo -e "the value to 0 (foam256_use_custom_colors=0)${nc}"
 
     #- Insert the lines
     echo '"- vim Extension OpenFOAM' > $HOME/.vimrc
     echo 'filetype plugin indent on' >> $HOME/.vimrc
-    echo ':let g:foam265_use_custom_colors=1' >> $HOME/.vimrc
+    echo ':let g:foam256_use_custom_colors=1' >> $HOME/.vimrc
+    echo ':set t_Co=256' >> $HOME/.vimrc
 
+#------------------------------------------------------------------------------
 else
     echo -e "${ORANGE}        ++ There is an existing \$HOME/.vimrc file${nc}"
 
     #- TODO more accurate for plugin and indent
-    if grep -Fq "vim Extension OpenFOAM" $HOME/.vimrc; then
+    #--------------------------------------------------------------------------
+    if grep -Fq 'vim Extension OpenFOAM' $HOME/.vimrc; then
         echo -en "${ORANGE}        ++ Entry of vim Extenion OpenFOAM found"
         echo -e "» nothing to do${nc}"
 
     else 
         echo -en "        ${ORANGE}++ The following lines are inserted at"
-	echo -e " the end of the file:"
+    	echo -e " the end of the file:"
     	echo    '            filetype plugin indent on'
     	echo -e "            :let g:foam256_use_custom_colors=1 ${nc}"
         echo -en "${ORANGE}    + If you want to use your own colorscheme set "
         echo -e "the value to 0 (foam256_use_custom_colors=0)${nc}"
 
 	#- Insert the lines
+    #--------------------------------------------------------------------------
 	echo -e "\n\"- vim Extension OpenFOAM" >> $HOME/.vimrc
         echo    'filetype plugin indent on' >> $HOME/.vimrc 
 	echo    ':let g:foam256_use_custom_colors=1' >> $HOME/.vimrc
+    fi
+
+    #- Check for terminal color settings
+    #--------------------------------------------------------------------------
+    if grep -Fq 't_Co=256' $HOME/.vimrc; then
+        echo -en "${ORANGE}    + t_Co=256 found» nothing to do${nc}"
+    else
+        echo -en "${ORANGE}    + t_Co=256 not found, adding to .vimrc${nc}"
+        echo ':set t_Co=256' >> $HOME/.vimrc
     fi
 fi
 
@@ -122,7 +136,7 @@ fi
 #------------------------------------------------------------------------------
 echo -e "${nc}
     + vimExtensionOpenFOAM is ready to use
-    + thanks to ${FL}Ferdinand Leinbach${nc} for the extension
+    + Thanks to ${FL}Ferdinand Leinbach${nc} for the extension
 
 Kind regards
 Tobias Holzmann
