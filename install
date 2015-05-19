@@ -30,7 +30,6 @@ nc='\e[0m'
 
 # Checking if .vim directories are available and create if bool = false
 #-------------------------------------------------------------------------------
-
 if [ ! -d $HOME/.vim ]; then
     mkdir $HOME/.vim
 fi
@@ -42,8 +41,21 @@ fi
 if [ ! -d $HOME/.vim/colors ]; then
     mkdir $HOME/.vim/colors
 fi
+
 if [ ! -d $HOME/.vim/syntax/foam256 ]; then
     mkdir $HOME/.vim/syntax/foam256
+fi
+
+if [ ! -d $HOME/.vim/indent ]; then
+    mkdir $HOME/.vim/indent
+fi
+
+if [ ! -d $HOME/.vim/plugin ]; then
+    mkdir $HOME/.vim/plugin 
+fi
+
+if [ ! -d $HOME/.vim/ftdetect ]; then
+    mkdir $HOME/.vim/ftdetect
 fi
 
 
@@ -51,8 +63,10 @@ fi
 #-------------------------------------------------------------------------------
 echo -n 'All necessary files are copied now...'
 cp -ur syntax/* $HOME/.vim/syntax/
-cp -u ftdetect/scripts.vim $HOME/.vim/
+cp -u ftdetect/* $HOME/.vim/ftdetect/
 cp -u colors/* $HOME/.vim/colors/
+cp -u plugin/* $HOME/.vim/plugin/
+cp -u indent/* $HOME/.vim/indent/
 echo 'done'
 
 
@@ -64,26 +78,27 @@ echo 'Checking if $HOME/.vimrc is available'
 if [ ! -f $HOME/.vimrc ]; then
     echo -e "   + ${green}Not available \$HOME/.vimrc » its gonna be created${nc}"
     echo -e '   + The following lines will be inserted:'
-    echo    '       :set tabstop=4 shiftwidth=4 expandtab'
-#    echo    '       :let g:foam_use_custom_colors=0'
-#    echo    '   + If you have no colorscheme set the value to 1 (foam_use_custom_colors=1)'
+    echo    '       filetype plugin indent on'
+    echo    '       :let g:foam256_use_custom_colors=1'
+    echo    '   + If you want to use your own colorscheme set the value to 0 (foam256_use_custom_colors=0)'
 
     #- Insert the lines
-    echo -e '"- vim Extension OpenFOAM\n:set tabstop=4\n:set shiftwidth=4\n:set expandtab' > $HOME/.vimrc
-#    echo '"- vim Extension OpenFOAM, if you have no colorscheme set to 1\n:let g:foam_use_custom_colors=0' >> $HOME/.vimrc
+    echo '"- vim Extension OpenFOAM (if you have your own colorscheme set to 0)\nfiletype plugin indent on\n:let g:foam_use_custom_colors=1' > $HOME/.vimrc
 
 else
     echo -e "${red}There is an existing \$HOME/.vimrc file"
 
+    #- TODO more accurate for plugin and indent
     if grep -Fq "vim Extension OpenFOAM" $HOME/.vimrc; then
-        echo "Entry of vim Extenion OpenFOAM in $HOME/.vimrc 
-              found » nothing to do"
+        echo "Entry of vim Extenion OpenFOAM in $HOME/.vimrc found » nothing to do"
 
     else 
         echo -e "    ${green}+ The following lines are inserted at the end of the file:"
-	echo -e "        :set tabstop=4 shiftwidth=4 expandtab${nc}"
-    	echo -e '"- vim Extension OpenFOAM\n:set tabstop=4\n:set shiftwidth=4\n:set expandtab' >> $HOME/.vimrc
-#        echo '"- vim Extension OpenFOAM, if you have no colorscheme set to 1\n:let g:foam_use_custom_colors=0' >> $HOME/.vimrc
+    	echo    '        filetype plugin indent on'
+    	echo -e "        :let g:foam256_use_custom_colors=1 ${nc}"
+
+	#- Insert the lines
+	echo '"- vim Extension OpenFOAM (if you have your own colorscheme set to 0)\nfiletype plugin indent on\n:let g:foam_use_custom_colors=1' >> $HOME/.vimrc
     fi
 fi
 
