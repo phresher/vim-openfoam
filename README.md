@@ -18,7 +18,7 @@ This short intruduction includes the steps which are necessary to get this appli
 * Switch to the new folder
 > cd $FOAM_RUN/../OpenFOAM_extensions
 * Clone the repository to the new folder
-> git clone git://bitbucket.org:shor-ty/vimExtensionOpenFOAM
+> git clone https://bitbucket.org/shor-ty/vimextensionopenfoam.git
 * Switch to the repository directory
 > cd vimExtensionOpenFOAM
 * Install the extension by using the _install_ script
