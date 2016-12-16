@@ -1,7 +1,8 @@
 "----------------------------------------------"
 " Contributor: Tobias Holzmann                 "
-" Last Change: May 2015                        "
-" Version:     4.0                             "
+" Last Change: December 2016                   "
+"----------------------------------------------"
+" Location:    www.Holzmann-cfd.de             "
 " Email:       Tobias.Holzmann@Holzmann-cfd.de "
 "----------------------------------------------"
 
@@ -47,7 +48,6 @@ runtime syntax/foam256/constant/turbulenceProperties.vim
 runtime syntax/foam256/constant/radiationProperties.vim
 runtime syntax/foam256/constant/regionProperties.vim
 runtime syntax/foam256/constant/transportProperties.vim
-runtime syntax/foam256/constant/dynamicMeshDict.vim
 
 
 " Folder constant/polyMesh

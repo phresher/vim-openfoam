@@ -5,16 +5,14 @@
 " Location:    www.Holzmann-cfd.de             "
 " Email:       Tobias.Holzmann@Holzmann-cfd.de "
 "----------------------------------------------"
-echo "syntax/keywordmapping.vim"
 
 
-" 
 " -----------------------------------------------------------------------------
 
 
 " Check if own color scheme or foam256 color scheme 
 " -----------------------------------------------------------------------------
-if (g:foam256_use_custom_colors==0)
+if (g:foam256_use_own_colors==1)
 
     " User defined macros -- possible labels are:
     "       Special

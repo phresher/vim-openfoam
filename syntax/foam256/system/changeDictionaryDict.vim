@@ -1,7 +1,8 @@
 "----------------------------------------------"
 " Contributor: Tobias Holzmann                 "
-" Last Change: May 2015                        "
-" Version:     4.0                             "
+" Last Change: December 2016                   "
+"----------------------------------------------"
+" Location:    www.Holzmann-cfd.de             "
 " Email:       Tobias.Holzmann@Holzmann-cfd.de "
 "----------------------------------------------"
 
@@ -10,7 +11,7 @@
 "-------------------------------------------------------------------------------
 
     "- Dictionarys in the file 
-    syntax keyword dictReplace 
+    syn keyword dictReplace 
     \ dictionaryReplacement
     highlight link dictReplace foam256_dictionary
 

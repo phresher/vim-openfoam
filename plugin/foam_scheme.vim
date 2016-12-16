@@ -5,7 +5,6 @@
 " Location:    www.Holzmann-cfd.de             "
 " Email:       Tobias.Holzmann@Holzmann-cfd.de "
 "----------------------------------------------"
-echo "plugin/foam_scheme.vim"
 
 
 "-------------------------------------------------------------------------------
@@ -17,17 +16,19 @@ augroup End
 
 
 "------------------------------------------------------------------------------
-
 function! CheckFoamScheme()
-    if !exists("g:foam256_use_custom_colors")
-        let g:foam256_use_custom_colors=0
+    if !exists("g:foam256_use_own_colors")
+        let foam256_use_own_colors=0
     endif
-    if (g:foam256_use_custom_colors==1)
+
+    if (g:foam256_use_own_colors==0)
         
         "- Set colorscheme
+        "  You can choose the old one foam256 or the new one foam4x
+        "----------------------------------------------------------------------
         let my_filetype = &filetype
         if (my_filetype =~ 'foam256*') 
-            colorscheme foam256 
+            colorscheme foam4x
         endif
     endif
 endfunction

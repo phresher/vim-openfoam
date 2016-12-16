@@ -1,7 +1,8 @@
 "----------------------------------------------"
 " Contributor: Tobias Holzmann                 "
-" Last Change: May 2015                        "
-" Version:     4.0                             "
+" Last Change: December 2016                   "
+"----------------------------------------------"
+" Location:    www.Holzmann-cfd.de             "
 " Email:       Tobias.Holzmann@Holzmann-cfd.de "
 "----------------------------------------------"
 
@@ -62,7 +63,6 @@
       \ uniformTotalPressure
       \ variableHeightFlowRate
       \ wallHeatTransfer
-      \ wall
       \ waveSurfacePressure
       \ wedge
       \ wideBandDiffusiveRadiation
@@ -202,6 +202,7 @@
     "- Constant keywords on the right side
     syn keyword bCKeywordsRS
       \ uniform
+      \ code
       \ solidThermo
       \ fluidThermo
       \ nonuniform
@@ -212,6 +213,7 @@
     "- Constant keywords on the left side
     syn keyword bCKeywordsLS 
       \ type
+      \ name
       \ Tnbr
       \ kappa
       \ kappaName
@@ -241,5 +243,6 @@
       \ dimensions
       \ boundaryField
     highlight link specialEntrys foam256_specialEntry
+
 
 "------------------------------------------------------------------------------

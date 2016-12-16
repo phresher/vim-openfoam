@@ -1,7 +1,8 @@
 "----------------------------------------------"
 " Contributor: Tobias Holzmann                 "
 " Last Change: December 2016                   "
-" Version:     OpenFOAM-4.x                    "
+"----------------------------------------------"
+" Location:    www.Holzmann-cfd.de             "
 " Email:       Tobias.Holzmann@Holzmann-cfd.de "
 "----------------------------------------------"
 

@@ -1,9 +1,10 @@
 "----------------------------------------------"
 " Contributor: Tobias Holzmann                 "
-" Last Change: May 2015                        "
-" Version:     4.0                             "
+" Last Change: December 2016                   "
+" Version:     4.x                             "
 " Email:       Tobias.Holzmann@Holzmann-cfd.de "
 "----------------------------------------------"
+
 
 " indentation general indentation 
 " -----------------------------------------------------------------------------
