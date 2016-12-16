@@ -127,6 +127,7 @@
       \ totalPressure 
       \ totalTemperature 
       \ translatingWallVelocity 
+      \ tractionDisplacement
       \ turbulentHeatFluxTemperature 
       \ turbulentInlet
       \ turbulentIntensityKineticEnergyInlet 
@@ -217,6 +218,8 @@
       \ kappaLayers
       \ thicknessLayers
       \ value 
+      \ pressure
+      \ traction
       \ inletValue 
       \ outletValue 
       \ mixingLength 

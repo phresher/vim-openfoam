@@ -1,9 +1,19 @@
 "----------------------------------------------"
 " Contributor: Tobias Holzmann                 "
-" Last Change: May 2015                        "
-" Version:     4.0                             "
+" Last Change: December 2016                   "
+"----------------------------------------------"
+" Location:    www.Holzmann-cfd.de             "
 " Email:       Tobias.Holzmann@Holzmann-cfd.de "
 "----------------------------------------------"
+
+echo "scripts.vim"
+
+" Set the value for 
+"-------------------------------------------------------------------------------
+"let g:foam256_use_custom_colors=1
+
+
+"-------------------------------------------------------------------------------
 
 augroup foam256
     au!
@@ -17,7 +27,8 @@ function! CheckFoam256()
     endif
 
 
-" Check the first 15 lines and check which highlight should be used
+" If the filetype was not set, check the first 15 lines (OpenFOAM header)
+" and check which file we are checking out
 "-------------------------------------------------------------------------------
 
     let cnum = 1
@@ -31,7 +42,8 @@ function! CheckFoam256()
                 "- for same keywords in different files
 "-------------------------------------------------------------------------------
                 while 1
-                    "- If 'FoamFile' found check more accurate
+                    "- This stuff is for boundary conditions
+                    "-----------------------------------------------------------
                     let a = getline(dnum)
                     if ((a =~ 'alpha.*;')
                     \|| (a =~ 'cell.*;')
@@ -55,42 +67,63 @@ function! CheckFoam256()
                     \|| (a =~ 'Qr;')
                     \|| (a =~ 'rho;')
                     \|| (a =~ 'Su;')
+                    \|| (a =~ 'S;')
                     \|| (a =~ ' T;')
                     \|| (a =~ 'Theta.*;')
                     \|| (a =~ 'Tu.*;')
                     \|| (a =~ ' U.*;')
                     \|| (a =~ 'Xi.*;'))
-                    "- Load 0/* files
                         setfiletype foam256_bC
                         let exit = 1
                         break
-                    "- Load dictionaryDict
+                    "- This stuff is for the changeDictionaryDict
+                    "-----------------------------------------------------------
                     elseif (a =~ 'changeDictionaryDict')
                         setfiletype foam256_changeDictionaryDict
                         let exit = 1
                         break
-                    "- Load thermophysicalProperties
+
+                    "- This stuff is for the thermophysicalProperties
+                    "-----------------------------------------------------------
                     elseif (a =~ 'thermophysicalProperties')
                         setfiletype foam256_thermodynamicProperties
                         let exit = 1
                         break
+                        
+                    "- This stuff is for the dynamicMeshDict 
+                    "-----------------------------------------------------------
+                    elseif (a =~ 'dynamicMeshDict')
+                        setfiletype foam256_dynamicMeshDict
+                        let exit = 1
+                        break
+
+                    "- If the first 15 lines does not match 'FoamFile' exit
+                    "-----------------------------------------------------------
                     elseif (dnum == 15)
                         break
                     endif
                     let dnum += 1
                 endwhile
 "-------------------------------------------------------------------------------
-            "- Only set if you are not in 0/* files
-            if (exit == 0) 
-                setfiletype foam256_general
-            endif
+"
+
         "- If keyword 'FoamFile' not found within the first 15 lines exit    
+        "-----------------------------------------------------------------------
         elseif (cnum == 15)
             break
         endif
+
         "- Increase line number
+        "-----------------------------------------------------------------------
         let cnum += 1
     endwhile
+
+    "- If no 'FoamFile' found, we use some default stuff
+    "---------------------------------------------------------------------------
+    if (exit == 0) 
+        setfiletype foam256_general
+    endif
+
 endfunction
 
 

@@ -1,10 +1,14 @@
 "----------------------------------------------"
 " Contributor: Tobias Holzmann                 "
-" Last Change: May 2015                        "
-" Version:     4.0                             "
+" Last Change: December 2016                   "
+"----------------------------------------------"
+" Location:    www.Holzmann-cfd.de             "
 " Email:       Tobias.Holzmann@Holzmann-cfd.de "
 "----------------------------------------------"
+echo "plugin/foam_scheme.vim"
 
+
+"-------------------------------------------------------------------------------
 
 augroup check_foam_colors
     au!

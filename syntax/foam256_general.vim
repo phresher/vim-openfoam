@@ -12,7 +12,7 @@ if exists("b:current_syntax")
 endif
 
 
-" Load  file to buffer for completition
+" Load file to buffer for completition
 " -----------------------------------------------------------------------------
 let s:plugindir = expand('<sfile>:p:h:h')
 
@@ -47,6 +47,7 @@ runtime syntax/foam256/constant/turbulenceProperties.vim
 runtime syntax/foam256/constant/radiationProperties.vim
 runtime syntax/foam256/constant/regionProperties.vim
 runtime syntax/foam256/constant/transportProperties.vim
+runtime syntax/foam256/constant/dynamicMeshDict.vim
 
 
 " Folder constant/polyMesh

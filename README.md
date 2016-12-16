@@ -3,27 +3,22 @@
 This short intruduction includes the steps which are necessary to get this application up and running.
 
 ### OpenFOAM Versions ###
-* Generated for all versions
+* Generated for all versions but adopted to 4.x
 
 ### What is this repository for? ###
 * This extension to the vim editor allows you to highlight a lot of OpenFOAM keywords
-* Version 4.0
+* Version 4.x (represents the version of OpenFOAM)
 * Developed by [Holzmann-cfd](https://holzmann-cfd.de)
 * Modified and extended by Ferdinand Leinbach
 
-### How do I get set up? ###
-* Feel free to clone it where ever you want, but normally you should have a fixed folder for _user stuff_
-* Make a new fold
-> mkdir -p $FOAM_RUN/../OpenFOAM_extensions
-* Switch to the new folder
-> cd $FOAM_RUN/../OpenFOAM_extensions
-* Clone the repository to the new folder
+### How do add the stuff to my vim? ###
+* In general you should use pathogen for keeping your vim folder clean and easy to manage
+* For that purpose check out that site: https://github.com/tpope/vim-pathogen
+* After _pathagon_ is installed, go into your bundle directory
+> cd $HOME/.vim/bundle
+* and clone the vim extension for OpenFOAM
 > git clone https://bitbucket.org/shor-ty/vimextensionopenfoam.git
-* Switch to the repository directory
-> cd vimExtensionOpenFOAM
-* Install the extension by using the _install_ script
-> ./install
-* Finished
+* Done. If you open the OpenFOAM files now, the plugin should be used  
 
 ### Change color and keywords ###
 * If you have questions, hints or any suggestions please email me
@@ -32,6 +27,13 @@ This short intruduction includes the steps which are necessary to get this appli
 * If you insert more keywords or modify the files please make a pull request
 
 ### Version Changes ###
+
+#### Version 4.x ####
+* Renewed the README file for the correct usage with pathogen
+* Added keywords for the dynamicMeshDict
+* Changed the colorscheme (build a new one)
+* Updated keywords and other stuff
+
 #### Version 4.0 ####
 * Updated the install script (remove issue #1 and #2)
 * Modified keymapping.vim to use the foam256 colorscheme

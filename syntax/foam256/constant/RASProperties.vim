@@ -1,7 +1,7 @@
 "----------------------------------------------"
 " Contributor: Tobias Holzmann                 "
-" Last Change: May 2015                        "
-" Version:     4.0                             "
+" Last Change: December 2016                   "
+" Version:     OpenFOAM-4.x                    "
 " Email:       Tobias.Holzmann@Holzmann-cfd.de "
 "----------------------------------------------"
 
@@ -18,13 +18,25 @@
 
 
     "- Modeltyp keyword
-    syn match RASPropertiesModelKey 
-    \ "^RASModel\{1}"
-    highlight link RASPropertiesModelKey foam256_RASPropKey
+    syn match PropertiesModelKey 
+    \ "RAS"
+    highlight link PropertiesModelKey foam256_RASPropKey
+
+
+    "- Modeltyp keyword
+    syn match PropertiesModelKey 
+    \ "laminar"
+    highlight link PropertiesModelKey foam256_RASPropKey
+
+
+    "- Modeltyp keyword
+    syn match PropertiesModelKey 
+    \ "LES"
+    highlight link PropertiesModelKey foam256_RASPropKey
 
 
     "- RASModels which are available 
-    syn keyword RASPropertiesModels 
+    syn keyword PropertiesModels 
     \ v2f
     \ realizableKE
     \ kkLOmega
@@ -35,7 +47,6 @@
     \ kOmega 
     \ kOmegaSST 
     \ kEpsilon 
-    \ laminar 
     \ qZeta 
     \ realizeableKE 
     \ SpalartAllmaras 
@@ -48,7 +59,7 @@
     \ LienCubicKE 
     \ LienCubicKELowRe 
     \ LienLeschzinerLowRe
-    highlight link RASPropertiesModels foam256_RASModels
+    highlight link PropertiesModels foam256_RASModels
 
 
 "-------------------------------------------------------------------------------
