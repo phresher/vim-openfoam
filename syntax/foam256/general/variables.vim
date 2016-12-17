@@ -19,6 +19,7 @@
     \ m
     \ nTheta
     \ Sf
+    \ S
     \ nu0 
     \ sigma 
     \ E

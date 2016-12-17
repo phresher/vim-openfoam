@@ -41,7 +41,8 @@ hi Cursor                                       ctermbg=214
 hi CursorColumn                                 ctermbg=238 
 hi CursorLine                                   ctermbg=237         cterm=none
 hi LineNr                       ctermfg=247     ctermbg=233 
-hi Comment      ctermfg=244 guifg=#808080
+hi Comment                      ctermfg=244
+hi Colorcolumn                                  ctermbg=238
 
 
 " User defined macros for the general treatment

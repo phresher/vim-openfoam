@@ -17,7 +17,6 @@
 "-------------------------------------------------------------------------------
 let g:foam256_use_own_colors=0
 
-
 augroup foam256
     au!
     au BufEnter * :call CheckFoam256()
@@ -29,13 +28,13 @@ function! CheckFoam256()
         finish               
     endif
 
-
 " If the filetype was not set, check the first 15 lines (OpenFOAM header)
 " and check which file we are checking out
 "-------------------------------------------------------------------------------
 
     let cnum = 1
-    let exit = 0
+    let exit_ = 0
+
     while 1
         "- Check the first 15 lines for keyword 'FoamFile'
         if (getline(cnum) =~ 'FoamFile')    
@@ -50,6 +49,7 @@ function! CheckFoam256()
                 "- for same keywords in different files
 "-------------------------------------------------------------------------------
                 while 1
+                    
                     "- This stuff is for boundary conditions
                     "-----------------------------------------------------------
                     let a = getline(dnum)
@@ -82,39 +82,39 @@ function! CheckFoam256()
                     \|| (a =~ ' U.*;')
                     \|| (a =~ 'Xi.*;'))
                         setfiletype foam256_bC
-                        let exit = 1
+                        let exit_ = 1
                         break
                     "- This stuff is for the changeDictionaryDict
                     "-----------------------------------------------------------
                     elseif (a =~ 'changeDictionaryDict')
                         setfiletype foam256_changeDictionaryDict
-                        let exit = 1
+                        let exit_ = 1
                         break
 
                     "- This stuff is for the thermophysicalProperties
                     "-----------------------------------------------------------
                     elseif (a =~ 'thermophysicalProperties')
                         setfiletype foam256_thermodynamicProperties
-                        let exit = 1
+                        let exit_ = 1
                         break
                         
                     "- This stuff is for the dynamicMeshDict 
                     "-----------------------------------------------------------
                     elseif (a =~ 'dynamicMeshDict')
                         setfiletype foam256_dynamicMeshDict
-                        let exit = 1
+                        let exit_ = 1
                         break
-                        
-                    "- If no 'FoamFile' found, we use some default stuff
-                    "----------------------------------------------------------
-                    if (exit == 0) 
-                        setfiletype foam256_general
-                    endif
 
                     "- If the first 15 lines does not match 'FoamFile' exit
                     "-----------------------------------------------------------
                     elseif (dnum == 15)
                         break
+                    endif
+                        
+                    "- If no 'FoamFile' found, we use some default stuff
+                    "----------------------------------------------------------
+                    if (exit_ == 0)
+                        setfiletype foam256_general
                     endif
 
                     let dnum += 1

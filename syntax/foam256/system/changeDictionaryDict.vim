@@ -12,7 +12,7 @@
 
     "- Dictionarys in the file 
     syn keyword dictReplace 
-    \ dictionaryReplacement
+    \ boundary 
     highlight link dictReplace foam256_dictionary
 
 

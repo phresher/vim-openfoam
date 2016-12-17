@@ -26,7 +26,6 @@
     \ timePrecision 
     \ runTimeModifiable 
     \ libs 
-    \ functions
     \ adjustTimeStep 
     \ maxCo 
     \ maxAlphaCo 
@@ -39,6 +38,13 @@
     \ secondaryWriteInterval
     \ secondaryPurgeWrite
     highlight link ctrDictKeysLS foam256_keyOnLeftSide
+
+
+    "- Dictionaries
+    syn keyword ctrDictDict
+    \ functions
+    highlight link ctrDictDict foam256_dictionary
+
 
 
     "- Keys in controlDict on the right side (RS)

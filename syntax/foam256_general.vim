@@ -34,6 +34,7 @@ runtime syntax/foam256/general/variables.vim
 " Folder system
 "-------------------------------------------------------------------------------
 runtime syntax/foam256/system/controlDict.vim
+runtime syntax/foam256/system/fvOptions.vim
 runtime syntax/foam256/system/fvSolution.vim
 runtime syntax/foam256/system/fvSchemes.vim
 runtime syntax/foam256/system/decomposePar.vim

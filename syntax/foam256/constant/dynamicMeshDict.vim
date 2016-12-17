@@ -6,7 +6,6 @@
 " Email:       Tobias.Holzmann@Holzmann-cfd.de "
 "----------------------------------------------"
 
-
 " dynamicMeshDict 
 "-------------------------------------------------------------------------------
 
@@ -16,10 +15,40 @@
     \ dynamicFvMesh
     \ motionSolverLibs
     \ solver 
-    hi link dynamicFvMeshKeyword foam256_keyOnLeftSide
+    \ sixDoFRigidBodyMotionCoeffs
+    \ dynamicInkJetFvMeshCoeffs
+    \ dynamicMotionSolverFvMeshCoeffs
+    \ dynamicRefineFvMeshCoeffs
+    \ movingConeTopoFvMeshCoeffs
+    \ multiSolidBodyMotionFvMeshCoeffs
+    \ rawTopoChangerFvMeshCoeffs
+    \ solidBodyMotionFvMeshCoeffs
+    \ staticFvMeshCoeffs
+    \ patches
+    \ innerDistance
+    \ outerDistance
+    \ rhoInf
+    \ mass
+    \ momentOfInertia
+    \ centreOfMass
+    \ orientation
+    \ velocity
+    \ acceleration
+    \ angularMomentum
+    \ torque
+    \ report
+    \ accelerationRelaxation
+    \ accelerationDumping
+    \ type
+    \ g
+    \ constraints
+    \ restraints
+    \ sixDoFRigidBodyMotionConstraint
+    \ sixDoFRigidBodyMotionRestraint
+    hi link dynamicFvMesh foam256_keyOnLeftSide
 
 
-    "- Solvers that can be used
+    "- DynamicFvMesh
     syn keyword dynamicFvMeshSolver 
     \ dynamicMotionSolverFvMesh 
     \ dynamicInkJetFvMesh
@@ -30,7 +59,28 @@
     \ rawTopoChangerFvMesh
     \ solidBodyMotionFvMesh
     \ staticFvMesh
+    \ Newmark
+    \ Crank-Nicolsen
     hi link dynamicFvMeshSolver foam256_tranportModels 
+    
+    
+    "- Solvers that can be used
+    syn keyword dynamicFvMeshSolver 
+    \ sixDoFRigidBodyMotion 
+    \ dynamicInkJetFvMesh
+    \ dynamicMotionSolverFvMesh
+    \ dynamicRefineFvMesh
+    \ movingConeTopoFvMesh
+    \ multiSolidBodyMotionFvMesh
+    \ rawTopoChangerFvMesh
+    \ solidBodyMotionFvMesh
+    \ staticFvMesh
+    \ axis
+    \ point
+    \ sphericalAngularDamper
+    \ linearDamper
+    \ coeff
+    hi link dynamicFvMeshSolver foam256_BC
 
 
     "- Dictionary

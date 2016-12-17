@@ -195,6 +195,12 @@
       \\|turbulentTemperatureRadCoupledMixed\)\{1}"
     highlight link bCCompressible foam256_bC 
 
+
+    "- Boundary conditions for wall (could also be a name of a patch) 
+    syn match bCCompressible
+      \ "wall;"
+    highlight link bCCompressible foam256_bC 
+
     
 " General stuff for all files in 0/* 
 "------------------------------------------------------------------------------
