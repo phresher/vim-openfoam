@@ -6,11 +6,6 @@
 
 
 " -----------------------------------------------------------------------------
-
-
-" Check if own color scheme or foam256 color scheme
-" -----------------------------------------------------------------------------
-
     " User defined macros -- possible labels are:
     "       Special
     "       Label
