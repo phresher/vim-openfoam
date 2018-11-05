@@ -15,7 +15,7 @@
 "  If 1 is used, you can make further manipulation in
 "  syntax/foam256_keymapping.vim
 "-------------------------------------------------------------------------------
-let g:foam256_use_own_colors=0
+let g:foam256_use_own_colors=1
 
 augroup foam256
     au!
