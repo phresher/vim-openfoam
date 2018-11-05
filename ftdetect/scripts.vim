@@ -35,9 +35,13 @@ function! CheckFoam256()
                 "- This is done to be more flexible to set up colors
                 "- for same keywords in different files
                 while 1
-                    "- This stuff is for boundary conditions
                     let a = getline(dnum)
-                    if ((a =~ 'alpha.*;')
+                    "- This stuff is for the turbulenceProperties
+                    if (a =~ 'turbulenceProperties')
+                        setfiletype foam256_turbulenceProperties
+                        return
+                    "- This stuff is for boundary conditions
+                    elseif ((a =~ 'alpha.*;')
                     \|| (a =~ 'cell.*;')
                     \|| (a =~ 'epsilon;')
                     \|| (a =~ 'ft;')
@@ -62,10 +66,14 @@ function! CheckFoam256()
                     \|| (a =~ ' S;')
                     \|| (a =~ ' T;')
                     \|| (a =~ 'Theta.*;')
-                    \|| (a =~ 'Tu.*;')
+                    \|| (a =~ ' Tu.*;')
                     \|| (a =~ ' U.*;')
                     \|| (a =~ 'Xi.*;'))
                         setfiletype foam256_bC
+                        return
+                    "- This stuff is for the turbulenceProperties
+                    elseif (a =~ 'turbulenceProperties')
+                        setfiletype foam256_turbulenceProperties
                         return
                     "- This stuff is for the changeDictionaryDict
                     elseif (a =~ 'changeDictionaryDict')
