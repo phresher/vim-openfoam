@@ -19,8 +19,6 @@ let s:plugindir = expand('<sfile>:p:h:h')
 
 let s:filepath1= join([ s:plugindir ,"syntax/foam256/system/fvSolution.vim"],"/")
 exec "badd ".s:filepath1
-let s:filepath2= join([ s:plugindir ,"syntax/foam256/constant/RASProperties.vim"],"/")
-exec "badd ".s:filepath2
 let s:filepath3= join([ s:plugindir ,"syntax/foam256/system/fvSchemes.vim"],"/")
 exec "badd ".s:filepath3
 
@@ -44,8 +42,6 @@ runtime syntax/foam256/system/snappyHexMeshDict.vim
 
 " Folder constant
 "-------------------------------------------------------------------------------
-runtime syntax/foam256/constant/RASProperties.vim
-runtime syntax/foam256/constant/turbulenceProperties.vim
 runtime syntax/foam256/constant/radiationProperties.vim
 runtime syntax/foam256/constant/regionProperties.vim
 runtime syntax/foam256/constant/transportProperties.vim
