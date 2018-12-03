@@ -3,30 +3,34 @@
 This short intruduction includes the steps which are necessary to get this application up and running.
 
 ### OpenFOAM Versions ###
-* Generated for all versions but adopted to 4.x
+* Generated for all versions but adopted to 6.x
 
 ### What is this repository for? ###
 * This extension to the vim editor allows you to highlight a lot of OpenFOAM keywords
-* Version 4.x (represents the version of OpenFOAM)
-* Developed by [Holzmann-cfd](https://holzmann-cfd.de)
-* Modified and extended by Ferdinand Leinbach
+* The original version was developed by [Holzmann-cfd](https://holzmann-cfd.de)
+* The current branch is maintained by Qi Zhang.
 
 ### How do add the stuff to my vim? ###
 * In general you should use pathogen for keeping your vim folder clean and easy to manage
-* For that purpose check out that site: https://github.com/tpope/vim-pathogen
+* For that purpose check out that site: [vim-pathogen](https://github.com/tpope/vim-pathogen)
 * After _pathagon_ is installed, go into your bundle directory
 > cd $HOME/.vim/bundle
 * and clone the vim extension for OpenFOAM
 > git clone https://bitbucket.org/shor-ty/vimextensionopenfoam.git
-* Done. If you open the OpenFOAM files now, the plugin should be used  
+* Done. If you open the OpenFOAM files now, the plugin should be used
 
-### Change color and keywords ###
-* If you have questions, hints or any suggestions please email me
-* If you want to use your own colorscheme just change the global variable in $HOME/.vimrc
-> foam256_use_custom_colors=0
-* If you insert more keywords or modify the files please make a pull request
+
+* spf13-vim is also highly recommended. Refer to [spf13-vim](https://github.com/spf13/spf13-vim)
+* If you already have it, just add phresher/vim-openfoam to your .vimrc.bundles.local file
+> echo Bundle \'phresher/vim-openfoam\' >> ~/.vimrc.bundles.local
+* and install it with
+> vim +BundleInstall! +BundleClean +q
 
 ### Version Changes ###
+
+#### Version 6.x ####
+* Added keywords
+* Remove custom colorscheme
 
 #### Version 4.x ####
 * Renewed the README file for the correct usage with pathogen
@@ -58,3 +62,4 @@ This short intruduction includes the steps which are necessary to get this appli
 ### Thanksgiving ###
 * Karl-Johan Nogenmyr
 * Ferdinand Leinbach
+

@@ -8,15 +8,6 @@
 
 "-------------------------------------------------------------------------------
 
-
-" Switch, if the colorscheme from this bundle is used or if you prefer your own
-"  1 = use your own costum colors related to your basic colorscheme
-"  0 = use the color scheme that comes with that bundle
-"  If 1 is used, you can make further manipulation in
-"  syntax/foam256_keymapping.vim
-"-------------------------------------------------------------------------------
-let g:foam256_use_own_colors=1
-
 augroup foam256
     au!
     au BufEnter * :call CheckFoam256()
@@ -38,18 +29,14 @@ function! CheckFoam256()
     while 1
         "- Check the first 15 lines for keyword 'FoamFile'
         if (getline(cnum) =~ 'FoamFile')    
-
             "- We found the 'FoamFile' token
             "  Now lets check out which file we are going to open
             "------------------------------------------------------------------
-
             let dnum = cnum
                 "- Additional checks to load different highlight files"
                 "- This is done to be more flexible to set up colors
                 "- for same keywords in different files
-"-------------------------------------------------------------------------------
                 while 1
-                    
                     "- This stuff is for boundary conditions
                     "-----------------------------------------------------------
                     let a = getline(dnum)
@@ -90,33 +77,28 @@ function! CheckFoam256()
                         setfiletype foam256_changeDictionaryDict
                         let exit_ = 1
                         break
-
                     "- This stuff is for the thermophysicalProperties
                     "-----------------------------------------------------------
                     elseif (a =~ 'thermophysicalProperties')
                         setfiletype foam256_thermodynamicProperties
                         let exit_ = 1
                         break
-                        
                     "- This stuff is for the dynamicMeshDict 
                     "-----------------------------------------------------------
                     elseif (a =~ 'dynamicMeshDict')
                         setfiletype foam256_dynamicMeshDict
                         let exit_ = 1
                         break
-
                     "- If the first 15 lines does not match 'FoamFile' exit
                     "-----------------------------------------------------------
                     elseif (dnum == 15)
                         break
                     endif
-                        
                     "- If no 'FoamFile' found, we use some default stuff
                     "----------------------------------------------------------
                     if (exit_ == 0)
-                        setfiletype foam256_general
+                        setfiletype foam256_bC
                     endif
-
                     let dnum += 1
                 endwhile
 "-------------------------------------------------------------------------------
@@ -127,7 +109,6 @@ function! CheckFoam256()
         elseif (cnum == 15)
             break
         endif
-
         "- Increase line number
         "-----------------------------------------------------------------------
         let cnum += 1
