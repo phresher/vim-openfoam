@@ -25,15 +25,15 @@
     highlight link turbModel foam256_turbPropModel
 
     "- Special keywords
-    syn keyword turbPropertiesSpecial
+    syn keyword RASPropertiesSpecial
     \ printCoeffs
     \ turbulence
     \ RASModel
     \ LESModel
-    highlight link turbPropertiesSpecial foam256_keyOnLeftSide
+    highlight link RASPropertiesSpecial foam256_keyOnLeftSide
 
     "- RASModels which are available
-    syn keyword RASPropertiesModels
+    syn keyword PropertiesModels
     \ v2f
     \ realizableKE
     \ kkLOmega
@@ -55,21 +55,9 @@
     \ LounderSharmaKE
     \ LienCubicKE
     \ LienCubicKELowRe
-    highlight link RASPropertiesModels foam256_RASModels
-
-    syn keyword LESPropertiesModels
     \ LienLeschzinerLowRe
-    \ DeardorffDiffStress
-    \ Smagorinsky
-    \ SpalartAllmarasDDES
-    \ SpalartAllmarasDES
-    \ SpalartAllmarasIDDES
-    \ WALE
-    \ dynamicKEqn
-    \ dynamicLagrangian
-    \ kEqn
-    \ kOmegaSSTDES
-    highlight link LESPropertiesModels foam256_LESModels
+    highlight link PropertiesModels foam256_RASModels
+
 
 "-------------------------------------------------------------------------------
 "-------------------------------------------------------------------------------

@@ -15,8 +15,8 @@ augroup end
 
 function! CheckFoam256()
 "-------------------------------------------------------------------------------
-    if did_filetype()       
-        finish               
+    if did_filetype()
+        finish
     endif
 
 " If the filetype was not set, check the first 15 lines (OpenFOAM header)
@@ -70,10 +70,6 @@ function! CheckFoam256()
                     \|| (a =~ ' U.*;')
                     \|| (a =~ 'Xi.*;'))
                         setfiletype foam256_bC
-                        return
-                    "- This stuff is for the turbulenceProperties
-                    elseif (a =~ 'turbulenceProperties')
-                        setfiletype foam256_turbulenceProperties
                         return
                     "- This stuff is for the changeDictionaryDict
                     elseif (a =~ 'changeDictionaryDict')
