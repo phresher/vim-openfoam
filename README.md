@@ -22,7 +22,7 @@ This short intruduction includes the steps which are necessary to get this appli
 
 * spf13-vim is also highly recommended. Refer to [spf13-vim](https://github.com/spf13/spf13-vim)
 * If you already have it, just add phresher/vim-openfoam to your .vimrc.bundles.local file
-> echo Bundle \'phresher/vim-openfoam\' >> ~/.vimrc.bundles.local
+> echo Bundle \\'phresher/vim-openfoam\\' >> ~/.vimrc.bundles.local
 * and install it with
 > vim +BundleInstall! +BundleClean +q
 
